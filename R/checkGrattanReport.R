@@ -1,13 +1,13 @@
 #' Check Grattan Report
-#' @description Check Grattan reports written is LaTeX for typing errors, significant warnings, 
+#' @description Check Grattan reports written is LaTeX for typing errors, significant warnings,
 #' and inconsistent style.
 #' @param path Path to search for the tex source file.
 #' @param output_method How errors should be reported.
 #' @param compile Should \code{pdflatex} be run on the report so the logs may be checked?
 #' @param pre_release Should the document be assumed to be final? Runs additional checks.
 #' @param release Should a final pdf be prepared for publication?
-#' @param .proceed_after_rerun On the occasions where infinitely many passes of \code{pdflatex} 
-#' are required, include this to skip the error. Note that this will result in false cross-references 
+#' @param .proceed_after_rerun On the occasions where infinitely many passes of \code{pdflatex}
+#' are required, include this to skip the error. Note that this will result in false cross-references
 #' or incompletely formatted bibliographies.
 #' @return Called for its side-effect.
 #' @export
@@ -31,29 +31,29 @@ checkGrattanReport <- function(path = ".",
                                release = FALSE,
                                .proceed_after_rerun){
   if (release && (!pre_release || !compile)){
-    stop("release = TRUE but final and compile are not both TRUE also.")
+    stop("release = TRUE but pre_release and compile are not both TRUE also.")
   }
-  
+
   if (pre_release && !compile){
-    stop("final = TRUE but compile = FALSE.")
+    stop("pre_release = TRUE but compile = FALSE.")
   }
-  
+
   if (compile && Sys.which("pdflatex") == ""){
     stop("pdflatex not on system path. Ensure you have LaTeX installed (MiKTeX, MacTeX, TeXLive) and that it is searchable on PATH. ",
          "(Did you install but leave programs open?)")
   }
-  
+
   if (release && Sys.getenv("R_GSCMD") == ""){
     stop("Ghostscript is required but R_GSCMD is not set. Ensure Ghostscript is installed then set R_GSCMD, e.g.\n\t",
          "Sys.setenv(R_GSCMD = 'C:/Program Files/gs/gs9.20/bin/gswin64c.exe')")
   }
-  
+
   current_wd <- getwd()
   setwd(path)
   on.exit(setwd(current_wd))
-  
+
   output_method <- match.arg(output_method)
-  
+
   if (pre_release){
     download_failure <- download.file("https://raw.githubusercontent.com/HughParsonage/grattex/master/grattan.cls",
                                       destfile = "grattan.cls",
@@ -62,11 +62,11 @@ checkGrattanReport <- function(path = ".",
       stop("grattan.cls failed to download from master branch (and be updated).")
     }
   }
-  
+
   if (!dir.exists("./travis/grattanReport/")){
     stop("./travis/grattanReport/ does not exist.")
   }
-  
+
   if (release){
     if (!dir.exists("RELEASE")){
       dir.create("RELEASE")
@@ -77,7 +77,7 @@ checkGrattanReport <- function(path = ".",
       }
     }
   }
-  
+
   if (pre_release){
     if (!dir.exists("PRE-RELEASE")){
       dir.create("PRE-RELEASE")
@@ -94,14 +94,14 @@ checkGrattanReport <- function(path = ".",
     stop("path must contain one and only one .tex file.")
   }
   filename <- tex_file[[1]]
-  
+
   .report_error <- function(...){
     report2console(...)
   }
-  
+
   report_name <- gsub("^(.*)\\.tex$", "\\1", tex_file)
-  
-  switch(output_method, 
+
+  switch(output_method,
          "twitter" = {
            stopifnot(file.exists("~/twitteR/grattan-reporter.R"))
            source("~/twitteR/grattan-reporter.R")
@@ -112,22 +112,22 @@ checkGrattanReport <- function(path = ".",
                    nchar(twitter_handle) > 0)] %>%
              .[["twitter_handle"]] %>%
              paste0("@", .)
-           
+
            .report_error <- function(...){
              report2twitter(...,
                             authors = authors_twitter_handles,
                             build_status = "Broken:",
                             report_name = report_name)
            }
-         }, 
+         },
          "gmailr" = {
            .report_error <- function(...){
              report2gmail(...,
-                          report_name = report_name, 
+                          report_name = report_name,
                           authors = the_authors)
            }
          })
-  
+
   check_preamble(filename, .report_error, pre_release = pre_release, release = release)
 
   the_authors <-
@@ -135,16 +135,16 @@ checkGrattanReport <- function(path = ".",
 
   cat("I see the following as authors:",
       the_authors, sep = "\n   ")
-  
+
   cat("\n")
-  
+
   check_input <- function(filename){
     inputs <- inputs_of(filename)
     if (length(inputs) > 0){
       for (input in inputs){
         check_input(input)
         cat(input)
-      
+
         check_cite_pagerefs(input, .report_error = .report_error)
         cat(".")
         check_escapes(input, .report_error = .report_error)
@@ -164,22 +164,22 @@ checkGrattanReport <- function(path = ".",
     }
   }
   check_input(filename)
-  
+
   check_cite_pagerefs(filename, .report_error = .report_error)
   cat(green(symbol$tick, "Cite and pagerefs checked.\n"), sep = "")
 
   check_escapes(filename)
   cat(green(symbol$tick, "No unescaped $.\n"))
-  
+
   check_dashes(filename)
   cat(green(symbol$tick, "Dashes correctly typed.\n"))
-  
+
   check_quote_marks(filename, .report_error = .report_error)
   cat(green(symbol$tick, "Opening quotes correctly typed.\n"))
 
   check_footnote_typography(filename)
   cat(green(symbol$tick, "Footnote typography checked.\n"))
-  
+
   check_xrefs(filename)
   cat(green(symbol$tick, "No repetitive xrefs.\n"))
 
@@ -195,7 +195,7 @@ checkGrattanReport <- function(path = ".",
     .[grepl("\\addbibresource", ., fixed = TRUE)] %>%
     trimws %>%
     gsub("^\\\\addbibresource[{](.+\\.bib)[}]$", "\\1", .)
-  
+
   for (bib_file in bib_files){
     validate_bibliography(file = bib_file)
     cat(green(symbol$tick, bib_file, "validated.\n"))
@@ -210,7 +210,7 @@ checkGrattanReport <- function(path = ".",
   cat(green(symbol$tick, "All figures and tables have a Xref.\n"))
 
   cat("\n")
-  
+
   if (compile){
     full_dir_of_path <- getwd()
     md5_filename <- tools::md5sum(filename)
@@ -230,7 +230,7 @@ checkGrattanReport <- function(path = ".",
     if (file.exists(gsub("\\.tex", ".pdf", filename))){
       file.remove(gsub("\\.tex", ".pdf", filename))
     }
-    
+
     cat("   Invoking pdflatex... ")
     options(warn = 2)
     system2(command = "pdflatex",
@@ -241,20 +241,20 @@ checkGrattanReport <- function(path = ".",
     system2(command = "biber",
             args = c("--onlylog", "-V", gsub("\\.tex$", "", filename)),
             stdout = gsub("\\.tex$", ".log2", filename))
-    
+
     check_biber()
     cat(green(symbol$tick, "biber validated citations.\n"))
-    
+
     cat("   Rerunning pdflatex. Starting pass number 1")
     system2(command = "pdflatex",
             args = c("-draftmode", filename),
             stdout = gsub("\\.tex$", ".log2", filename))
-    
+
     cat(" 2 ")
     system2(command = "pdflatex",
             args = c("-interaction=batchmode", filename),
             stdout = gsub("\\.tex$", ".log2", filename))
-    
+
     log_result <- check_log(check_for_rerun_only = TRUE)
     reruns_required <- 2
     while (pre_release && !is.null(log_result) && log_result == "Rerun LaTeX."){
@@ -263,13 +263,13 @@ checkGrattanReport <- function(path = ".",
               args = c("-interaction=batchmode", filename),
               stdout = gsub("\\.tex$", ".log2", filename))
       log_result <- check_log(check_for_rerun_only = TRUE)
-      
+
       reruns_required <- reruns_required + 1
       if (!missing(.proceed_after_rerun) && reruns_required > .proceed_after_rerun){
         cat("\nW: Skipping checking of LaTeX rerun.")
         break
       }
-      
+
       if (missing(.proceed_after_rerun) && reruns_required > 9){
           stop("Emergency stop: pdflatex had to rerun more than 9 times but could not stabilize cross-references or the bibliography. ",
                "Consult an expert: Hugh Parsonage or Cameron Chisholm or https://tex.stackexchange.com.")
@@ -277,11 +277,11 @@ checkGrattanReport <- function(path = ".",
     }
     cat("\n")
     cat(green(symbol$tick, ".log file checked.\n"))
-    
+
     if (pre_release){
       check_CenturyFootnote()
       cat(green(symbol$tick, "\\CenturyFootnote correctly placed.\n"))
-      
+
       if (release){
         if (!dir.exists("RELEASE")){
           dir.create("RELEASE")
@@ -290,24 +290,24 @@ checkGrattanReport <- function(path = ".",
         embedFonts(gsub("\\.tex$", ".pdf", filename),
                    outfile = file.path(full_dir_of_path, "RELEASE", gsub("\\.tex$", ".pdf", filename)))
         cat(green(symbol$tick, "Fonts embedded.\n"))
-        
+
       } else {
-        file.copy(paste0(report_name, ".pdf"), file.path(full_dir_of_path, 
-                                                         "PRE-RELEASE", 
+        file.copy(paste0(report_name, ".pdf"), file.path(full_dir_of_path,
+                                                         "PRE-RELEASE",
                                                          paste0(report_name, ".pdf")))
       }
-      
+
       setwd(full_dir_of_path)
       cat("\n")
     }
   }
-  
+
   cat(bgGreen(symbol$tick, "Report checked.\n"))
   if (pre_release){
     if (release){
       cat("Releaseable pdf written to ", file.path(path, "RELEASE", gsub("\\.tex$", ".pdf", filename)))
       cat("\nDONE.")
-      
+
       lines <- readLines(filename, encoding = "UTF-8", warn = FALSE)
       if (!any(grepl("FrontPage", lines))){
         cat("\n\nNOTE: Did you forget to add the FrontPage to \\documentclass{grattan}?")
@@ -317,10 +317,10 @@ checkGrattanReport <- function(path = ".",
         cat("\nWARNING: Found XX in document.")
       }
     } else {
-      
+
     }
   }
-  
+
   if (file.exists("./travis/grattanReport/error-log.tsv")){
     prev_build_status <-
       fread("./travis/grattanReport/error-log.tsv") %>%
@@ -331,12 +331,12 @@ checkGrattanReport <- function(path = ".",
     prev_build_status <- "None"
     append <- FALSE
   }
-  
+
   if (prev_build_status %in% c("None", "Broken", "Still failing")){
     build_status <- "Fixed"
     if (output_method == "gmailr"){
       message <- gmailr::mime(
-        To = "hugh.parsonage@gmail.com", #email_addresses, 
+        To = "hugh.parsonage@gmail.com", #email_addresses,
         From = "hugh.parsonage@gmail.com",
         Subject = paste0("Fixed: ", report_name)
       ) %>%
@@ -346,9 +346,9 @@ checkGrattanReport <- function(path = ".",
   } else {
     build_status <- "OK"
   }
-    
+
   data.table(Time = format(Sys.time(), "%Y-%m-%d %H:%M:%S"),
-             build_status = build_status, 
+             build_status = build_status,
              error_message = "NA") %>%
     fwrite("./travis/grattanReport/error-log.tsv",
            sep = "\t",

@@ -19,15 +19,15 @@ checkGrattanReport(path = ".", output_method = c("console", "twitter",
 
 \item{release}{Should a final pdf be prepared for publication?}
 
-\item{.proceed_after_rerun}{On the occasions where infinitely many passes of \code{pdflatex} 
-are required, include this to skip the error. Note that this will result in false cross-references 
+\item{.proceed_after_rerun}{On the occasions where infinitely many passes of \code{pdflatex}
+are required, include this to skip the error. Note that this will result in false cross-references
 or incompletely formatted bibliographies.}
 }
 \value{
 Called for its side-effect.
 }
 \description{
-Check Grattan reports written is LaTeX for typing errors, significant warnings, 
+Check Grattan reports written is LaTeX for typing errors, significant warnings,
 and inconsistent style.
 }
 
