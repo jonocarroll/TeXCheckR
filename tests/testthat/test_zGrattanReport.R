@@ -1,7 +1,7 @@
 context("GrattanReport")
 
 test_that("SchoolFunding.tex doesn't fail", {
-  skip()
+  skip("Need to clarify LaTeX path.")
   expect_null(checkGrattanReport(path = "./SchoolFunding", compile = FALSE))
 })
 
