@@ -16,4 +16,8 @@ test_that("Duplicate entries error", {
                regexp = "[Dd]uplicate entries in bibliography")
   expect_error(any_bib_duplicates("./validate-bib/dup_entries-2.bib"), 
                regexp = "[Dd]uplicate entries in bibliography")
+  expect_error(any_bib_duplicates("./validate-bib/dup_entries-url.bib"), 
+               regexp = "[Dd]uplicate entries in bibliography")
 })
+
+

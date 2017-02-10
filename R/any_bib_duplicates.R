@@ -51,13 +51,22 @@ any_bib_duplicates <- function(bib.files, .report_error){
   
   
   
-  if (anyDuplicated(bibDT, by = c("Author", "Year", "Title"))){
-    dups_head <- duplicated(bibDT, by = c("Author", "Year", "Title"))
-    dups_tail <- duplicated(bibDT, by = c("Author", "Year", "Title"), fromLast = TRUE)
-    DT_with_all_duplicates <- 
-      bibDT %>%
-      .[dups_tail | dups_head, .(key, Author, Title, date, year)] %>%
-      .[order(Author, Title)]
+  if (anyDuplicated(bibDT, by = c("Author", "Year", "Title")) || anyDuplicated(bibDT, by = "url")){
+    if (anyDuplicated(bibDT, by = "url")){
+      dups_head <- duplicated(bibDT, by = "url")
+      dups_tail <- duplicated(bibDT, by = "url", fromLast = TRUE)
+      DT_with_all_duplicates <- 
+        bibDT %>%
+        .[dups_tail | dups_head, .(key, url)] %>%
+        .[order(url, key)]
+    } else {
+      dups_head <- duplicated(bibDT, by = c("Author", "Year", "Title"))
+      dups_tail <- duplicated(bibDT, by = c("Author", "Year", "Title"), fromLast = TRUE)
+      DT_with_all_duplicates <- 
+        bibDT %>%
+        .[dups_tail | dups_head, .(key, Author, Title, date, year)] %>%
+        .[order(Author, Title)]
+    }
     
     stopifnot(nrow(DT_with_all_duplicates) %% 2 == 0, nrow(DT_with_all_duplicates) > 1)
     
