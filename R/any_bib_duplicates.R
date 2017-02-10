@@ -34,6 +34,12 @@ any_bib_duplicates <- function(bib.files, .report_error){
   if ("title" %notin% names(bibDT)){
     bibDT[, title := NA_character_]
   }
+  
+  volume <- NULL
+  if ("volume" %notin% names(bibDT)){
+    bibDT[, volume := NA_character_]
+  }
+  
   Author <- Title <- Year <- NULL
   bibDT %>%
     .[, Year := if_else(is.na(year),
@@ -49,9 +55,7 @@ any_bib_duplicates <- function(bib.files, .report_error){
                          gsub(", australia,", ",", Title, fixed = TRUE), 
                          Title)]
   
-  
-  
-  if (anyDuplicated(bibDT, by = c("Author", "Year", "Title")) || anyDuplicated(bibDT, by = "url")){
+  if (anyDuplicated(bibDT, by = c("Author", "Year", "Title", "volume")) || anyDuplicated(bibDT, by = "url")){
     if (anyDuplicated(bibDT, by = "url")){
       dups_head <- duplicated(bibDT, by = "url")
       dups_tail <- duplicated(bibDT, by = "url", fromLast = TRUE)
@@ -60,8 +64,8 @@ any_bib_duplicates <- function(bib.files, .report_error){
         .[dups_tail | dups_head, .(key, url)] %>%
         .[order(url, key)]
     } else {
-      dups_head <- duplicated(bibDT, by = c("Author", "Year", "Title"))
-      dups_tail <- duplicated(bibDT, by = c("Author", "Year", "Title"), fromLast = TRUE)
+      dups_head <- duplicated(bibDT, by = c("Author", "Year", "Title", "volume"))
+      dups_tail <- duplicated(bibDT, by = c("Author", "Year", "Title", "volume"), fromLast = TRUE)
       DT_with_all_duplicates <- 
         bibDT %>%
         .[dups_tail | dups_head, .(key, Author, Title, date, year)] %>%
@@ -70,7 +74,7 @@ any_bib_duplicates <- function(bib.files, .report_error){
     
     stopifnot(nrow(DT_with_all_duplicates) %% 2 == 0, nrow(DT_with_all_duplicates) > 1)
     
-    .report_error(line_no = NULL, context = "Possible duplicates in bibliographies.")
+    .report_error(line_no = NULL, context = "Possible duplicates in bibliographies.", error_message = "Possible duplicates in bibliography.")
     
     for (dup in 1:(nrow(DT_with_all_duplicates) / 2)){
       if (dup == 6){

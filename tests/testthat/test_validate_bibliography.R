@@ -20,4 +20,8 @@ test_that("Duplicate entries error", {
                regexp = "[Dd]uplicate entries in bibliography")
 })
 
+test_that("Broken fields detected", {
+  expect_error(validate_bibliography(file = "./validate-bib/field-broken-over2lines.bib"), 
+               regexp = "which is neither a key, nor field")
+})
 
