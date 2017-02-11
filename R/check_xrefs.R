@@ -32,11 +32,23 @@ check_xrefs <- function(filename, .report_error){
 
   for (line in line_nos_with_VrefCref){
     # 'See Figure \Vref{fig:'
-    if (grepl("((figure)|(table)|(box)) .[CVcv]ref", lines[[line]], perl = TRUE, ignore.case = TRUE)){
+    if (grepl("((section)|(figure)|(table)|(box)) .[CVcv]ref", lines[[line]], perl = TRUE, ignore.case = TRUE)){
       .report_error(line_no = line,
                     context = lines[[line]],
                     error_message = "Repeated xref")
       stop("Repeated xref. May appear as e.g. 'See Figure Figure 4.2.'")
     }
   }
+  
+  if (any(grepl(" on \\vpageref", lines, fixed = TRUE))){
+    line_no <- grep(" on \\vpageref", lines, fixed = TRUE)[[1]]
+    context <- lines[line_no]
+    .report_error(line_no = line_no,
+                  context = context,
+                  error_message = "Preposition before \\vpagref.",
+                  advice = "\\vpageref expands to include a preposition. Delete 'on'.")
+    stop("Preposition before \\vpageref.")
+  }
+  
+  
 }

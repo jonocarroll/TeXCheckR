@@ -10,3 +10,7 @@ test_that("Literal xrefs are detected", {
                regexp = "Hard-coded xref")
 })
 
+test_that("Check vpageref", {
+  expect_error(check_xrefs("./check-xrefs/prep-before-vpageref.tex"), 
+               regexp = "[pP]reposition before .vpageref")
+})
