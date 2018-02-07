@@ -1,0 +1,2867 @@
+\documentclass[11pt,a4paper,twoside]{carrollthesis}
+
+\usepackage{epsfig}
+\usepackage{cite}
+%\usepackage{graphicx}
+\usepackage{rotfloat}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{epic}
+\usepackage{graphics}
+\usepackage{rotating}
+\usepackage{placeins}
+\usepackage{hyperref}
+\usepackage{lscape}
+%\usepackage{pdfpages}
+%\usepackage{yfonts}
+%\usepackage[T1]{fontec}
+%%%%%%%%\usepackage[final]{pdfpages}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\fm}{\,{\rm fm}}
+\newcommand{\Dslash}{\mbox{$\not \!\! D$}}
+\newcommand{\delslash}{ \mkern-6mu \not \mkern-3mu \partial }
+\newcommand{\del}{\partial}
+\newcommand{\pr}{Phys.\ Rev.\ }
+\newcommand{\physrl}{Phys.\ Rev.\ Lett.\ }
+\newcommand{\physl}{Phys.\ Lett.\ }
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\beqa}{\begin{eqnarray*}}
+\newcommand{\eeqa}{\end{eqnarray*}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\bra}{\langle}
+\newcommand{\ket}{\rangle}
+\newcommand{\Tr}{{\rm Tr}\,}
+\newcommand{\tr}{{\rm Tr}\,}
+\newcommand{\muhat}{\hat{\mu}}
+\newcommand{\qhat}{\hat{q}}
+\newcommand{\s}{\sigma}
+\newcommand{\w}{\omega}
+\newcommand{\fh}{c_1(u\bar{u}+d\bar{d})}
+\newcommand{\sh}{c_2(s\bar{s})}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\reci}[1]{\frac{1}{#1}}
+\newcommand{\dbar}{d\mkern-6mu\mathchar'26}
+\newcommand{\name}{\mbox{Jonathan Carroll}}
+\newcommand{\volint}[1]{\int \frac{d^4{#1}}{(2\pi)^4} \;}
+\newcommand{\volthree}[1]{\int_0^{#1_F} \frac{d^3{#1}}{(2\pi)^3} \;}
+\newcommand{\kslash}{\mbox{$\not \! k$}}
+\newcommand{\pslash}{\mbox{$\not \! p$}}
+
+\newcommand{\emdash}{\hspace{1pt}---\hspace{1pt}}
+
+\newcommand{\nucl}[3]{
+\ensuremath{
+\phantom{\ensuremath{^{#1}_{#2}}}
+\llap{\ensuremath{^{#1}}}
+\llap{\ensuremath{_{\rule{0pt}{.55em}#2}}}
+\mbox{#3}
+}
+}
+
+% \newfont{\tapsmall}{tap scaled 1000}
+% \newfont{\tap}{tap scaled 1200}
+% \newfont{\tapsub}{tap scaled 1400}
+% \newfont{\tapmed}{tap scaled 2200}
+% \newfont{\tapbig}{tap scaled 3000}
+
+
+%\input GoudyIn.fd
+%\input Acorn.fd
+%\newcommand*\initfamily{\usefont{U}{GoudyIn}{xl}{n}}
+%\newcommand*\initfamily{\usefont{U}{Acorn}{xl}{n}} 
+
+%\input RoyalIn.fd
+%\newcommand*\initfamily{\usefont{U}{RoyalIn}{xl}{n}}
+
+
+\def\qed {{%        set up
+   \parfillskip=0pt        % so \par doesnt push \square to left
+   \widowpenalty=10000     % so we dont break the page before \square
+   \displaywidowpenalty=10000  % ditto
+   \finalhyphendemerits=0  % TeXbook exercise 14.32
+  %
+  %                 horizontal
+   \leavevmode             % \nobreak means lines not pages
+   \unskip                 % remove previous space or glue
+   \nobreak                % don't break lines
+   \hfil                   % ragged right if we spill over
+   \penalty50              % discouragement to do so
+   \hskip.2em              % ensure some space
+   \null                   % anchor following \hfill
+   \hfill                  % push \square to right
+   $\blacksquare$%              % the end-of-proof mark
+  %
+  %                   vertical
+   \par}}                  % build paragraph
+
+%\iffalse
+\hypersetup{
+%    bookmarks=true,         % show bookmarks bar?
+%    unicode=false,          % non-Latin characters in Acrobat's bookmarks
+%    pdftoolbar=true,        % show Acrobat's toolbar?
+%    pdfmenubar=true,        % show Acrobat's menu?
+%    pdffitwindow=true,      % page fit to window when opened
+%    pdftitle={My title},    % title
+%    pdfauthor={Author},     % author
+%    pdfsubject={Subject},   % subject of the document
+%    pdfnewwindow=true,      % links in new window
+%    pdfkeywords={keywords}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue           % color of external links
+}
+%\fi
+
+%Added by JDC
+%\parindent=0mm
+%\parskip=2mm
+
+\begin{document}
+% \input{frontpage}
+
+
+%% Main text
+% set page number starts from 1
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{mystyle}
+% \include{Chapter1_intro}
+% \FloatBarrier
+% \include{Chapter2_particlephysics}
+% \FloatBarrier
+% \include{Chapter3_models}
+% \FloatBarrier
+% \include{Chapter4_methods}
+% \FloatBarrier
+% \include{Chapter5_results}
+% \FloatBarrier
+% \include{Chapter6_conclusions}
+% \FloatBarrier
+%%\include{intro}
+%\FloatBarrier
+%%\include{JLABfile}
+%\FloatBarrier
+%%\include{BasicIdeas}
+%\FloatBarrier
+%%\include{ChangeBaryons}
+%\FloatBarrier
+%%\include{ChemicalPotential}
+%\FloatBarrier
+%%\include{FandD}
+%%\include{Interactions}
+%%\include{NotInQHD}
+%%\include{OctetQHD}
+%%\include{ParticleProperties}
+%%\include{SEMF}
+%%\include{SU2toSU3}
+
+% \cleardoublepage
+% \addcontentsline{toc}{chapter}{\quad \ Bibliography}
+% \bibliographystyle{JHEP-2}
+% \bibliography{refs}
+% \cleardoublepage
+%\bibliographystyle{plain}
+%\bibliographystyle{apsrev}
+%\bibliography{refs}
+
+% \appendix
+% \FloatBarrier
+% \include{AppendixA_derivations}
+% \FloatBarrier
+% \include{AppendixB_particles}
+%\FloatBarrier
+%\include{AppendixC_misc}
+% \FloatBarrier
+% \include{AppendixD_papers}
+%%\include{FirstLawDeriv}
+%%\include{QHDderiv}
+%%\include{TOVderiv}
+%%\include{QHDderivation_delta}
+%\FloatBarrier
+%%%%%%%%%\includepdf[pages=-,lastpage=22]{JDCphasetrans}
+%\include{AppendixTransformation}
+%\FloatBarrier
+%\include{AppendixJack}
+%\include{AppendixCovariance}
+%\FloatBarrier
+%\include{AppendixStaticQuark}
+%\include{AppendixQuarkLevel}
+
+% include a copy of my paper:
+%\includepdf[pages=1-12]{CW10067_published.pdf}
+
+\chapter{Introduction} \label{sec:introduction}
+%
+
+\font\dropcapfnt=cmr12 scaled \magstep5
+%\font\dropcapfnt=frcursive10 scaled \magstep5
+
+\def\dropcap#1{\smallbreak \setbox0=\hbox{\dropcapfnt#1}
+ \dimen0=\ht0 \setbox1=\hbox{t} \advance\dimen0 by-\ht1
+ \dimen1=\wd0 \advance\dimen1 by 0.3em
+ \hangindent\dimen1 \hangafter-2
+ \noindent\smash{\llap{\lower\dimen0\box0\hskip0.3em}}%%
+  \kern-0.0em }
+
+\dropcap The world we live in is a strange and wonderful place. The vast
+majority of our interactions with objects around us can be described
+and predicted by relatively simple equations and relations, which have
+been fully understood for centuries now. The concept of this tactile
+world is however, a result of averaging a vast ensemble of smaller
+effects on an unimaginably small scale, all conspiring together to
+produce what we observe at the macroscopic level. In order to
+investigate this realm in which particles can fluctuate in and out of
+existence in the blink of an eye, we must turn to more sophisticated
+descriptions of the players on this stage.\par
+%
+This research has the goal of furthering our understanding of the
+interior of what are loosely called `neutron stars', though as shall
+be shown herein, the contents are not necessarily only neutrons. With
+this in mind, further definitions include `{\it hyperon stars}', `{\it
+  quark stars}', and `{\it hybrid stars}', to describe compact stellar
+objects containing hyperons\footnote{Baryons for which one or more of
+  the three valence quarks is a strange quark. For example, the
+  $\Sigma^+$ hyperon contains two up quarks and a strange quark. For a
+  table of particle properties, including quark content, refer to
+  Table~\ref{tab:particlesummary}}, quarks, and a mixture of each,
+  respectively. In order to do this, we require physics beyond that
+  which describes the interactions of our daily lives; we require
+  physics that describes the individual interactions between
+  particles, and physics that describes the interactions between
+  enormous quantities of particles.\par
+%
+Only by uniting the physics describing the realm of the large and that
+of the small can one contemplate so many orders of magnitude in scale;
+from individual particles with a diameter of less than $10^{-22}~{\rm
+  m}$, up to neutron stars with a diameter of tens of kilometers. Yet
+the physics at each end of this massive scale are unified in this
+field of nuclear matter in which interactions of the smallest
+theorized entities conspire in such a way that densities equivalent to
+the mass of humanity compressed to the size of a mere sugar cube
+become commonplace, energetically favourable, and stable.\par
+%
+The sophistication of the physics used to describe the world of the
+tiny and that of the enormous has seen much development over time. The
+current knowledge of particles has reached a point where we are able
+to make incredibly precise predictions about the properties of single
+particles and have them confirmed with equally astonishing accuracy
+from experiments. The physics describing neutron stars has progressed
+from relatively simple (yet sufficiently consistent with experiment)
+descriptions of neutron (and nucleon) matter to many more
+sophisticated descriptions involving various species of baryons,
+mesons, leptons and even quarks.\par
+%
+The outcome of work such as this is hopefully a better understanding
+of matter at both the microscopic and macroscopic scales, as well as
+the theory and formalism that unites these two extremes. The primary
+methods which we have used to construct models in this thesis are
+Quantum Hadrodynamics (QHD)\emdash which shall be described in
+Sec.~\ref{sec:qhd}\emdash and the Quark-Meson Coupling
+(QMC) model, which shall be described in Sec.~\ref{sec:qmc}.\par
+%
+In this thesis, we will outline the research undertaken in which we
+produce a model for neutron star structure which complies with current
+theories for dense matter at and above nuclear density and is
+consistent with current data for both finite nuclei and observed
+neutron stars. Although only experimental evidence can successfully
+validate any theory, we hope to convey a framework and model that
+possesses a minimum content of inconsistencies or unjustified
+assumptions such that any predictions that are later shown to be
+fallacious can only be attributed to incorrect initial conditions.\par
+%
+As a final defense of any inconsistencies that may arise between this
+research and experiment, we refer the reader to one of the author's
+favourite quotes:\par
+%
+\vspace{0.2cm}
+%
+\begin{quotation}
+{\raisebox{-2mm}{\Huge ``}\ 
+There is a theory which states that if ever
+anyone discovers exactly what the Universe is for and
+why it is here, it will instantly disappear and be replaced by
+something even more bizarre and inexplicable.\par \phantom{abc}}
+\vspace{0.4mm}
+{There is another theory which states that this 
+has already happened.\ \raisebox{-2mm}{\Huge ''}}
+%\vspace{-0.28cm}
+\begin{flushright}
+-- Douglas Adams, The Hitchhiker's Guide To The Galaxy.
+\end{flushright}
+\end{quotation}
+%
+\par
+%
+Our calculations will begin at the particle interaction level, which
+will be described in more detail in Section~\ref{sec:PPQFT}, from
+which we are able to reproduce the bulk properties of matter at high
+densities, and which we shall discuss in
+Sections~\ref{sec:qhd}--\ref{sec:fockterms}. The methods for producing
+our simulations of the interactions and bulk properties will be
+detailed in Section~\ref{sec:methods}, along with a discussion on how
+this is applied to the study of compact stellar objects. The results
+of the simulations and calculations will be discussed in detail in
+Section~\ref{sec:results}, followed by discussions on the
+interpretation of these results in Section~\ref{sec:conclusions}. For
+the convenience of the reader, and for the sake of completeness,
+derivations for the majority of the equations used herein are provided
+in Appendix~\ref{sec:derivations}, and useful information regarding
+particles is provided in Appendix~\ref{sec:particleprops}. For now
+however, we will provide a brief introduction to this field of
+study.\par
+
+\section{The Four Forces}\label{sec:fourforces}
+%
+Theoretical particle physics has seen much success and found many
+useful applications; from calculating the individual properties of
+particles to precisions that rival even the best experimental setups,
+to determining the properties of ensembles of particles of greater and
+greater scale, and eventually to the properties of macroscopic objects
+as described by their constituents.\par
+%
+In order to do this, we need to understand each of the four
+fundamental forces in Nature. The weakest of these forces\emdash
+gravity\emdash attracts any two masses, and will become most important
+in the following section. Slightly stronger is electromagnetism; the
+force responsible for electric charge and magnetism. This force
+provides an attraction between opposite electric charges (and of
+course, repulsion between like charges), and thus helps to bind
+electrons to nuclei. The mathematical description of this effect is
+Quantum Electrodynamics (QED).\par
+%
+The `weak nuclear force'\emdash often abbreviated to `the weak
+force'\emdash is responsible for the decay of particles and thus
+radioactivity in general. At high enough energies, this force is
+unified with electromagnetism into the `electro-weak force'. The
+strongest of all the forces is the `strong nuclear force', abbreviated
+to `the strong force'. This force is responsible for attraction
+between certain individual particles over a very short scale, and is
+responsible for the binding of protons within nuclei which would
+otherwise be thrown apart by the repulsive electromagnetic force
+between the positively charged protons. Each of these forces plays a
+part in the work contained herein, but the focus of our study will be
+the strong force.\par
+%
+A remarkably successful description of the strongest force at the
+microscopic level is `Quantum Chromodynamics' (QCD) which is widely
+believed to be the true description of strong interactions, relying on
+quark and gluon degrees of freedom. The major challenge of this theory
+is that at low energies it is non-perturbative\footnote{At high
+  energies, QCD becomes asymptotically free~\cite{Gross:1973ju} and
+  can be treated perturbatively. The physics of our world however is
+  largely concerned with low energies.}, in that the coupling
+constant\emdash which one would normally perform a series-expansion in
+powers of\emdash is large, and thus is not suitable for such an
+expansion. Regularisation techniques have been produced to create
+perturbative descriptions of QCD, but perturbative techniques fail to
+describe both dynamical chiral symmetry breaking and confinement; two
+properties observed in Nature.\par
+%
+Rather than working directly with the quarks and gluons of QCD,
+another option is to construct a model which reproduces the effects of
+QCD using an effective field theory. This is a popular method within
+the field of nuclear physics, and the route that has be taken for this
+work. More precisely, we utilise a balance between attractive and
+repulsive meson fields to reproduce the binding between fermions that
+the strong interaction is responsible for.
+%
+\section{Neutron Stars}\label{sec:neutronstarhistory}
+%
+Although gravity may be the weakest of the four fundamental forces
+over comparable distance scales, it is the most prevalent over
+(extremely) large distances. It is this force that must be overcome
+for a star to remain stable against collapse. Although a description
+of this force that unifies it with the other three forces has not been
+(satisfactorily) found, General Relativity has proved its worth for
+making predictions that involve large masses.\par
+%
+At the time when neutron stars were first proposed by Baade and
+Zwicky~\cite{Baade:1934}, neutrons had only been very recently proven
+to exist by Chadwick~\cite{Chadwick:1932ma}. Nonetheless, ever
+increasingly more sophisticated and applicable theories have
+continually been produced to model the interactions that may lead to
+these incredible structures; likely the most dense configuration
+of particles that can withstand collapse.\par
+%
+The current lack of experimental data for neutron stars permits a wide
+variety of
+models~\cite{Lattimer:2000nx,Heiselberg:1999mq,Weber:2004kj,SchaffnerBielich:2004ch,Weber:1989hr,Chin:1974sa},
+each of which is able to successfully reproduce the observed
+properties of neutron stars, and most of which are able to reproduce
+current theoretical and experimental data for finite nuclei and
+heavy-ion collisions~\cite{Danielewicz:2002pu,Worley:2008cb}. The
+limits placed on models from neutron star
+observations~\cite{Podsiadlowski:2005ig,Grigorian:2006pu,Klahn:2006iw}
+do not sufficiently constrain the models, so we have the opportunity
+to enhance the models based on more sophisticated physics, while still
+retaining the constraints above.\par
+%
+The story of the creation of a neutron star begins with a reasonably
+massive star, with a mass greater than eight solar masses
+($M>8~M_\odot$). After millions to billions of years or so (depending
+on the exact properties of the star), this star will have depleted its
+fuel by fusion of hydrogen into
+%helium-3, helium-4
+${}^3$He, ${}^4$He, and larger elements up to iron (the most stable
+element since has the highest binding energy per nucleon).\par
+%
+At this point, the core of the star will consist of solid iron, as the
+heaviest elements are gravitationally attracted to the core of the
+star, with successively lighter elements layered on top in accordance
+with the traditional onion analogy. The core is unable to become any
+more stable via fusion reactions and is only held up against
+gravitational collapse by the degeneracy pressure of the
+electrons\footnote{In accordance with the Pauli Exclusion Principle,
+  no two fermions can share the same quantum state. This limits how
+  close two fermions\emdash in this case, electrons\emdash can be
+  squeezed, leading to the degeneracy pressure.}. The contents of the
+upper layers however continue to undergo fusion to heavier elements
+which also sink towards the core, adding to the mass of the lower
+layers and thus increasing the gravitational pressure below.\par
+%
+This causes the temperature and pressure of the star to increase,
+which encourages further reactions in the upper levels. Iron continues
+to pile on top of the core until it reaches the Chandrasekhar limit of
+$M = 1.4~M_\odot$, at which point the electron degeneracy pressure is
+overcome. The next step is not fully understood\footnote{At present,
+  models of supernova production have been unable to completely
+  predict observations.}, but the result is a Type II supernova.\par
+%
+At the temperatures and pressures involved here, it is energetically
+favourable for the neutrons to undergo $\beta$-decay into
+protons, electrons (or muons), and antineutrinos according to
+%
+\be \label{eq:inversebeta}
+n \to p^+ + e^- + \bar{\nu}_{e^-}.
+\ee
+%
+These antineutrinos have a mean-free path of roughly
+10~cm~\cite{Lattimer:2004} at these energies, and are therefore
+trapped inside the star, causing a neutrino pressure bubble with
+kinetic energy of order $10^{51}~{\rm erg} = 6.2\times 10^{56}~{\rm
+  MeV}$~\cite{Lattimer:2004}. With the core collapsing (and producing
+even more antineutrinos) even the rising pressure of the bubble cannot
+support the mass of the material above and the upper layers begin
+falling towards the core.\par
+%
+The sudden collapse causes a shock-wave which is believed to
+`\emph{bounce}' at the core and expel the outer layers of the star in
+a mere fraction of a second, resulting in what we know as a supernova,
+and leaving behind the expelled material which, when excited by
+radiation from another star, can be visible from across the galaxy as
+a supernova remnant (SNR).\par
+%
+At the very centre of the SNR, the remaining core of the star
+(na\"ively a sphere of neutrons, with some fraction of protons,
+neutrons and electrons) retains the angular momentum of the original
+star, now with a radius on the order of 10~km rather than $10^9$~km
+and thus neutron stars are thought to spin very fast, with rotational
+frequencies of up to 0.716~MHz~\cite{Hessels:2006ze}. Via a mechanism
+involving the magnetic field of the star, these spinning neutron stars
+may produce a beam of radiation along their magnetic axis, and if that
+beam happens to point towards Earth to the extent that we can detect
+it, we call the star a pulsar. For the purposes of this research, we
+shall assume the simple case that the objects we are investigating are
+static and non-rotating. Further calculations can be used to
+extrapolate the results to rotating solutions, but we shall not focus
+on this aspect here.\par
+%
+A further option exists; if the pressure and temperature (hence
+energy) of the system become great enough, other particles can be
+formed via weak reactions; for example, hyperons. The methods employed
+in this thesis have the goal of constructing models of matter at
+super-nuclear densities, and from these, models of neutron stars. The
+outcome of these calculations is a set of parameters which describe a
+neutron star (or an ensemble of them). Of these, the mass of a neutron
+star is an observable quantity. Other parameters, such as radius,
+energy, composition and so forth are unknown, and only detectable via
+higher-order (or proxy) observations.\par
+%
+The ultimate goal would be finding a physically realistic model based
+on the interactions of particles, such that we are able to deduce the
+structure and global properties of a neutron star based only on an
+observed mass. This however\emdash as we shall endeavor to show\emdash
+is easier said than done.\par
+%
+
+\chapter{Particle Physics $\&$ Quantum Field Theory}\label{sec:PPQFT}
+%  
+In our considerations of the models that follow we wish to explore
+ensembles of particles and their interactions. In order to describe
+these particles we rely on Quantum Field Theory (QFT), which
+mathematically describes the `rules' these particles obey. The
+particular set of rules that are believed to describe particles
+obeying the strong force at a fundamental level is Quantum
+Chromodynamics (QCD), but as mentioned in the introduction, this
+construction is analytically insolvable, so we rely on a model which
+simulates the properties that QCD predicts.\par
+%
+In the following sections, we will outline the methods of calculating
+the properties of matter from a field theoretic perspective.
+%
+\section{Lagrangian Density}\label{sec:lagrangiandensity}
+%
+The first step to calculating any quantity in a Quantum Field Theory
+is to construct a Lagrangian density, which summarizes the dynamics of
+the system, and from which the equations of motion can be
+calculated. In order to do this, we must define precisely what it is
+that we wish to calculate the properties of.\par
+%
+The classification schemes of particle physics provide several
+definitions into which particles are identified, however each of these
+provides an additional piece of information about those particles. We
+wish to describe nucleons $N$ (consisting of protons $p$, and neutrons
+$n$) which are hadrons\footnote{Bound states of quarks. In particular,
+  bound states of three `valence' quarks plus any number of
+  quark-antiquark pairs (the `sea' quarks, which are the result of
+  particle anti-particle production via gluons) are called baryons.},
+and are also fermions\footnote{Particles which obey Fermi--Dirac
+  statistics, in which the particle wavefunction is anti-symmetric
+  under exchange of particles; the property which leads to the Pauli
+  Exclusion Principle.}.\par
+%
+We will extend our description to include the hyperons $Y$ (baryons
+with one or more valence strange quarks) consisting of $\Lambda$,
+$\Sigma^-$, $\Sigma^0$, $\Sigma^+$, $\Xi^-$, and $\Xi^0$ baryons. The
+hyperons, together with the nucleons, form the octet of baryons (see
+Fig.~\ref{fig:BaryonOctet}).\par
+%
+We can describe fermions as four-component spinors $\psi$ of
+plane-wave solutions to the Dirac Equation (see later), such that
+%
+\be
+\psi = u(\vec{p}\, ) e^{-ip_\mu x^\mu},
+\ee
+%
+where $u(\vec{p}\, )$ are four-component Dirac spinors related to
+plane-waves with wave-vector $\vec{p}$ that carry the spin information
+for a particle, and which shall be discussed further in
+Appendix~\ref{sec:qhdderiv}. For convenience, we can group the baryon
+spinors by isospin group, since this is a degree of freedom that will
+become important. For example, we can collectively describe nucleons
+as a (bi-)spinor containing protons and neutrons, as
+%
+\be \psi_N = \begin{pmatrix} \psi_p(s) \\ \psi_n(s')
+\end{pmatrix}.
+%= \begin{pmatrix} \psi_p(\uparrow) \\ \psi_p(\downarrow)
+%  \\ \psi_n(\uparrow) \\ \psi_n(\downarrow)
+%\end{pmatrix}.
+\ee
+%
+Here we have used the labels for protons and neutrons rather than
+explicitly using a label for isospin. We will further simplify this by
+dropping the label for spin, and it can be assumed that this label is
+implied. We will also require the Dirac Adjoint to describe the
+antibaryons, and this is written as
+%
+\be \bar{\psi} = \psi^\dagger \gamma^0.  \ee
+%
+\par
+%
+Similarly, we can construct spinors for all the baryons. With these
+spinors we can construct a Lagrangian density to describe the
+dynamics of these particles. Since we are describing spin-$\half$
+particles we expect the spinors to be solutions of the Dirac equation
+which in natural units (for which $\hbar = c = 1$) is written as
+%
+\be
+\label{eq:diraceq}
+\left(i\gamma^\mu\del_\mu - M\right)\psi =
+\left(i\delslash-M\right)\psi = 0, \ee
+%
+and similarly for the antiparticle $\bar{\psi}$. Feynman slash
+notation is often used to contract and simplify expressions, and is
+simply defined as $\not \!\!\! A = \gamma_\mu A^\mu$. Here, $\del_\mu$
+is the four-derivative, $M$ is the mass of the particle, and
+$\gamma^\mu$ are the (contravariant) Dirac Matrices, which due to the
+anti-commutation relation of
+%
+\be \label{eq:cliff} \left\{\gamma^\alpha,\gamma^\beta\right\} =
+\gamma^\alpha\gamma^\beta - \gamma^\beta\gamma^\alpha =
+2\eta^{\alpha\beta}\mathbb{I}, \ee
+%
+(where $\eta = {\rm diag}(+1,-1,-1,-1)$ is the Minkoswki metric)
+generate a matrix representation of the Clifford Algebra ${\it
+  Cl}(1,3)$. They can be represented in terms of the $2\times 2$
+identity matrix ${\mathbb I}$, and the Pauli Matrices $\vec{\sigma}$,
+as
+%
+\be \gamma^0 =
+\left(\begin{matrix}\mathbb{I}&0\\0&-\mathbb{I}\end{matrix}\right),
+\qquad \gamma^i = \left(\begin{matrix}0&\sigma^i\;
+  \\-\sigma^i&0\; \end{matrix}\right).  \ee
+%
+\par
+%
+Eq.~(\ref{eq:diraceq}) describes free baryons, so we can use this as
+the starting point for our Lagrangian density, and thus if we include
+each of the isospin groups, we have
+%
+\be {\cal L} = \sum_{k} \bar{\psi}_k\left(i\delslash-M_k\right)\psi_k
+\ ; \ k \in\{N,\Lambda,\Sigma,\Xi\}, \ee
+%
+where the baryon spinors are separated into isospin groups, as
+%
+\be \label{eq:isospingroups} \psi_N = \begin{pmatrix}\psi_p\\\psi_n\end{pmatrix}, \quad
+  \psi_\Lambda = \begin{pmatrix}\psi_\Lambda\end{pmatrix}, \quad
+    \psi_\Sigma
+    = \begin{pmatrix}\psi_{\Sigma^+}\\\psi_{\Sigma^0}\\\psi_{\Sigma^-}\end{pmatrix},
+    \quad \psi_\Xi
+    = \begin{pmatrix}\psi_{\Xi^0}\\\psi_{\Xi^-}\end{pmatrix}. \quad
+    \ee
+%
+This implies that the mass term is also a diagonal matrix. In many
+texts this term is simply a scalar mass term multiplied by a suitable
+identity matrix, but that would imply the existence of a charge
+symmetry; that the mass of the proton and of the neutron were
+degenerate, and exchange of charges would have no effect on the
+Lagrangian density. We shall not make this assumption, and will rather
+work with the physical masses as found in Ref.~\cite{Amsler:2008zzb},
+so $M_k$ will contain distinct values along the diagonal.\par
+%
+To this point, we have constructed a Lagrangian density for the
+dynamics of free baryons. In order to simulate QCD, we require
+interactions between baryons and mesons to produce the correct
+phenomenology.  Historically, the scalar-isoscalar
+meson\footnote{Despite it's dubious status as a distinct particle
+  state, rather than a resonance of $\pi\pi$.} $\s$ and
+vector-isoscalar meson $\w$ have been used to this end. Additionally,
+the vector-isovector $\rho$ meson has been included (for asymmetric
+matter) to provide a coupling to the isospin
+channel~\cite{Serot:1984ey}.\par
+%
+In order to describe interactions of the baryons with mesons, we can
+include terms in the Lagrangian density for various classes of mesons
+by considering the appropriate bilinears that each meson couples
+to. For example, if we wish to include the $\w$ meson, we first
+observe that as a vector meson it will couple to a vector bilinear (to
+preserve Lorentz invariance) as
+%
+\be -ig_{\w}\bar{\psi}\gamma_\mu\w^\mu\psi \ee
+%
+with coupling strength $g_\w$, which as we shall see, may be dependent
+on the baryon that the meson is coupled to. The particular
+coefficients arise from the Feynman rules for meson-baryon vertices
+(refer to Appendix~\ref{sec:diagrams}). This particular vertex is
+written in Feynman diagram notation as shown in
+Fig.~\ref{fig:vectorvertex}(b).\par
+%
+\begin{figure}[!b]
+% \centering \includegraphics[width=0.65\textwidth]{IMAGES/Vertices.eps}
+\caption[Baryon-meson vertices]{Interaction vertex for the (a) scalar
+  and (b) vector mesons, where the solid lines represent baryons
+  $\psi$, the dashed line represents a scalar meson (e.g. $\s$), and
+  the wavy line represents a vector meson (e.g. $\omega_\mu$).
+  \protect\label{fig:vectorvertex}}
+\end{figure}
+%
+This is not the only way we can couple a meson to a baryon. We should
+also consider the Yukawa couplings of mesons to baryons with all
+possible Lorentz characteristics; for example, the $\omega$ meson can
+couple to a baryon $\psi$, with several different vertices:
+%
+\be \bar{\psi}\gamma_\mu\omega^\mu\psi,\ \ \bar{\psi}\s_{\mu\nu}q^\nu \!
+\omega^\mu\psi,\ {\rm and}\ \ \bar{\psi}q_\mu\omega^\mu\psi, \ee
+%
+where $q_\mu$ represents the baryon four-momentum transfer $(q_f -
+q_i)_\mu$. The latter two of these provides a vanishing contribution
+when considering the mean-field approximation (which shall be defined
+in Section~\ref{sec:mfa}), since $\s_{00}= 0$ and $q_\mu = 0$, as the
+system is on average, static.\par
+%
+If we include the appropriate scalar and vector terms\emdash including
+an isospin-coupling of the $\rho$ meson\emdash in our basic Lagrangian
+density we have
+%
+\be \label{eq:interL} {\cal L} = \sum_{k}
+\bar{\psi}_k\left(\gamma_\mu\left[i\del^\mu-g_{k \w}\w^\mu
+  -g_{\rho}(\vec{\tau}_{(k)}\cdot\vec{\rho}^{\, \mu})\; \right]
+-M_k+g_{k\s}\s\right)\psi_k \ ; \ k \in\{N,\Lambda,\Sigma,\Xi\}.  \ee
+%
+\par
+%
+The isospin matrices $\vec{\tau}_{(k)}$ are scaled Pauli matrices of
+appropriate order for each of the isospin groups, the third components
+of which are given explicitly here as
+%
+\be \label{eq:taus} \tau_{(N)3} = \tau_{(\Xi)3} = \reci{2}
+\left[ \begin{matrix}\ 1\ & 0\ \\\ 0\ & -1\ \end{matrix} \right],
+\quad
+%\tau_{(\Lambda)3} = \left[ \begin{matrix}\ 0\ \ \end{matrix} \right], \quad
+\tau_{(\Lambda)3} = 0, \quad \tau_{(\Sigma)3} =
+\left[ \begin{matrix}\ 1\ &\ 0\ &\ 0\ \\\ 0\ &\ 0\ &\ 0\ \\\ 0\ &\ 0\ &
+    -1\ \end{matrix} \right], \ee
+%
+for which the diagonal elements of $\tau_{(k)3}$ are the isospin
+projections of the corresponding baryons within an isospin group
+defined by Eq.~(\ref{eq:isospingroups}), i.e. $\tau_{(p)3} = I_{3p} =
++\half$.\par
+%
+At this point it is important that we remind the reader that the
+conventions in this field do not distinguish the use of explicit
+Einstein summation, and that within a single equation, indices may
+represent summation over several different spaces. To make this
+clearer, we will show an example of a term where all the indices are
+made explicit; the interaction term for the $\rho$ meson in
+Eq.~(\ref{eq:interL}) for which we explicitly state all of the indices
+%
+\bea \nonumber {\cal L}_{\rho} &=& \sum_{k}\, g_{\rho}\, \bar{\psi}_k
+\gamma^\mu \vec{\tau}_{(k)}\cdot\vec{\rho\, }_\mu \psi_k\\ &=&
+\sum_k\, \sum_{i,j=1}^{f_k}\, \sum_{\alpha,\beta=1}^{4}\,
+\sum_{\mu=0}^{3}\, \sum_{a=1}^{3}\, g_{\rho}\,
+\left(\bar{\psi}^i_k\right)_\alpha\; (\gamma^\mu)_{\alpha \beta}\;
+\left(\tau_{(k)}^a\right)^{ij}\; \rho^a_\mu\;
+\left(\psi_k^{j}\right)_\beta,\eea
+%
+where here $k$ is summed over isospin groups $N$, $\Lambda$, $\Sigma$,
+and $\Xi$; $i$ and $j$ are summed over flavor space (within an isospin
+group of size $f_k$, e.g. $f_N = 2$, $f_\Sigma = 3$); $\alpha$ and
+$\beta$ are summed over Dirac space; $\mu$ is summed over Lorentz
+space; and $a$ is summed over iso-vector space. The Pauli matrices, of
+which $\left(\tau_k^a\right)^{ij}$ are the elements, are defined in
+Eq.~(\ref{eq:taus}). This level of disambiguity is overwhelmingly
+cluttering, so we shall return to the conventions of this field and
+leave the indices as implicit.\par
+%
+In addition to the interaction terms, we must also include the free
+terms and field tensors for each of the mesons, which are chosen with
+the intent that applying the Euler--Lagrange equations to these terms
+will produce the correct phenomenology, leading to
+%
+\bea \nonumber &\mathcal{L} = & \sum_k
+\bar{\psi}_k\left(\gamma_\mu\left[i\del^\mu-g_{k\w}\w^\mu
+  -g_{\rho}(\vec{\tau}_{(k)}\cdot\vec{\rho}^{\, \mu})\; \right]
+-M_k+g_{k\s}\s\right)\psi_k \\ \nonumber &&
++\ \frac{1}{2}(\partial_{\mu}\sigma\partial^{\mu}\sigma-m^{2}_{\sigma}\sigma^{2})
++\frac{1}{2}m^{2}_{\omega}\omega_{\mu}\omega^{\mu}+
+\frac{1}{2}m^{2}_{\rho}\rho_{\mu}\rho^{\mu}% \\ &&
+-\frac{1}{4}\Omega_{\mu\nu}\Omega^{\mu\nu} -
+\frac{1}{4}R^a_{\mu\nu}R_a^{\mu\nu}, \\ && \label{eq:fulllag} \eea
+%
+where the field tensors for the $\w$ and $\rho$ mesons are,
+respectively,
+%
+\be \Omega_{\mu\nu} = \del_\mu\w_\nu - \del_\nu\w_\mu, \quad
+R^a_{\mu\nu} = \del_\mu\rho^a_\nu - \del_\nu\rho^a_\mu - g_\rho
+\epsilon^{abc}\rho^b_\mu\rho^c_\nu.  \ee
+%
+This is the Lagrangian density that we will begin with for the models
+we shall explore herein. Many texts (for example,
+Refs.~\cite{Alaverdyan:2009kv,Greco:2000dt,Uechi:2006pz,Menezes:2002cq})
+include higher-order terms (${\cal O}(\s^3)$,\ ${\cal
+  O}(\s^4)$,\ $\ldots$) and have shown that these do indeed have an
+effect on the state variables, but in the context of this work, we
+shall continue to work at this order for simplicity. It should be
+noted that the higher order terms for the scalar meson can be included
+in such a way as to trivially reproduce a framework consistent with
+the Quark-Meson Coupling model that shall be described later, and thus
+we are not entirely excluding this contribution.\par
+%
+
+\section{Mean-Field Approximation}\label{sec:mfa}
+%
+To calculate properties of matter, we will use an approximation to
+simplify the quantities we need to evaluate. This approximation, known
+as a Mean-Field Approximation (MFA) is made on the basis that we can
+separate the expression for a meson field $\alpha$ into two parts: a
+constant classical component, and a component due to quantum
+fluctuations;
+%
+\be \alpha = \alpha_{\rm classical} + \alpha_{\rm quantum}.  \ee
+%
+If we then take the vacuum expectation value (the average value in the
+vacuum) of these components, the quantum fluctuation term vanishes,
+and we are left with the classical component
+%
+\be \bra\alpha\ket \equiv \bra\alpha_{\rm classical}\ket.  \ee
+%
+This component is what we shall use as the meson contribution, and we
+will assume that this contribution (at any given density) is
+constant. This can be thought of as a background `field' on top of
+which we place the baryon components. For this reason, we consider the
+case of \emph{infinite matter}, in which there are no boundaries to
+the system. The core of lead nuclei (composed of over 200 nucleons)
+can be thought of in this fashion, since the effects of the outermost
+nucleons are minimal compared to the short-range strong nuclear
+force.\par
+%
+Furthermore, given that the ground-state of matter will contain some
+proportion of proton and neutron densities, any flavor-changing meson
+interactions will provide no contribution in the MFA, since the
+overlap operator between the ground-state $|\Psi\ket$ and any other
+state $|\xi\ket$ is orthogonal, and thus
+%
+\be
+\label{eq:overlap}
+\bra\; \Psi\; |\; \xi\; \ket = \delta_{\Psi\xi}.
+\ee
+%
+For this reason, any meson interactions which, say, interact with a
+proton to form a neutron will produce a state which is not the ground
+state, and thus provides no contribution to the MFA. We will show in
+the next section that this is consistent with maintaining isospin
+symmetry.
+
+\section{Symmetries}\label{sec:symmetries}
+%
+In the calculations that will follow, there are several terms that we
+will exclude from our considerations {\it ab initio} (including for
+example, some that appear in Eq.~(\ref{eq:fulllag})) because they
+merely provide a vanishing contribution, such as the quantum
+fluctuations mentioned above. These quantities shall be noted here,
+along with a brief argument supporting their absence in further
+calculations.\par
+%
+\subsection{Rotational Symmetry and Isospin}\label{subsec:rotational}
+%
+The first example is simple enough; we assume rotational invariance of
+the fields to conserve Lorentz invariance. In order to maintain
+rotational invariance in all frames, we require that the spatial
+components of vector quantities vanish, leaving only temporal
+components. For example, in the MFA the vector-isoscalar meson
+four-vector $\w_\mu$ can be reduced to the temporal component $\w_0$,
+and for notational simplicity, we will often drop the subscript and
+use $\bra\alpha\ket$ for the $\alpha$ meson mean-field
+contribution.\par
+%
+A corollary of the MFA is that the field tensor for the rho meson
+vanishes;
+%
+\be R^a_{\mu\nu} = \del_\mu\rho^a_\nu - \del_\nu\rho^a_\mu - g_\rho
+\epsilon^{abc}\rho^b_\mu\rho^c_\nu \underset{\rm MFA}\longrightarrow
+R^a_{00} = 0, \ee
+%
+since the derivatives of the constant terms vanish and
+$(\vec{\rho}_0\times\vec{\rho}_0) = 0$. The same occurs for the omega
+meson field tensor
+%
+\be \Omega_{\mu\nu} = \del_\mu\omega_\nu - \del_\nu\omega_\mu
+\underset{\rm MFA}\longrightarrow \Omega_{00} = 0.  \ee
+%
+We also require rotational invariance in isospin space along a
+quantization direction of $\hat{z}=\hat{3}$ (isospin invariance) as
+this is a symmetry of the strong interaction, thus only the neutral
+components of an isovector have a non-zero contribution. This can be
+seen if we examine the general $2\times2$ unitary isospin
+transformation, and the Taylor expansion of this term
+%
+\be \psi(x) \to \psi^\prime(x) = e^{i\vec{\tau}\cdot \vec{\theta}/2}
+\psi(x)
+%\xrightarrow[{}_{\theta\to 0}]{} 
+\ \mathop{\longrightarrow}_{|\theta| \ll 1} \ \left(1 +
+i\vec{\tau}\cdot\vec{\theta}/2 \right)\psi(x), \ee
+%
+where $\vec{\theta}=(\theta_1,\theta_2,\theta_3)$ is a triplet of real
+constants representing the (small) angles to be rotated through, and
+$\vec{\tau}$ are the usual Pauli matrices as defined in
+Eq.~(\ref{eq:taus}). As for the $\rho$ mesons, we can express the
+triplet as linear combinations of the charged states, as
+%
+\be \vec{\rho} = (\rho_1,\rho_2,\rho_3) = \left(
+\reci{\sqrt{2}}(\rho_+ + \rho_-),\ \frac{i}{\sqrt{2}}(\rho_- -
+\rho_+),\ \rho_0 \right).  \ee
+%
+The transformation of this triplet is then
+%
+\be \vec{\rho}\; (x) \to \vec{\rho\; }^\prime(x) =
+e^{i\vec{T}\cdot\vec{\theta} } \vec{\rho}\; (x).  \ee
+%
+where $(T^i)_{jk} = -i\epsilon_{ijk}$ is the adjoint representation of
+the SU(2) generators; the spin-1 Pauli matrices in the isospin basis,
+a.k.a. SO(3). We can perform a Taylor expansion about
+$\vec{\theta}=\vec{0}$, and we obtain
+%
+\be \rho_j(x) 
+%\xrightarrow[{}_{\theta\to 0}]{} 
+\ \mathop{\longrightarrow}_{|\theta| \ll 1} \ 
+\left[\delta_{jk} + i
+  (T^i)_{jk}\theta_i\right]\rho_k(x). \ee
+%
+We can therefore write the transformation as
+%
+\be \vec{\rho}\; (x) 
+%\xrightarrow[{}_{\theta\to 0}]{} 
+\ \mathop{\longrightarrow}_{|\theta| \ll 1} \ \vec{\rho}\; (x) -
+\vec{\theta} \times \vec{\rho}\; (x).  \ee
+%
+Writing this out explicitly for the three isospin states, we
+obtain the individual transformation relations
+%
+\bea \nonumber
+&&\vec{\rho}\; (x) \to \vec{\rho}\; (x) -
+  \vec{\theta} \times \vec{\rho}\; (x) =
+  ( \rho_1 - \theta_2\rho_3 + \theta_3\rho_2,\ \rho_2 - \theta_1\rho_3
+  + \theta_3\rho_1,\ \rho_3 - \theta_1\rho_2 + \theta_2\rho_1 ).\\[2mm]
+&&
+\eea
+%
+If we now consider the rotation in only the $\hat{z}=\hat{3}$
+direction, we see that the only invariant component is $\rho_3$
+%
+\be \vec{\rho}\; (x) 
+\xrightarrow[{}_{\stackrel{\theta1 = 0}{\theta_2 = 0}}]{} 
+\left(\rho_1 + \theta_3\rho_2,\ \rho_2 +
+\theta_3\rho_1,\ \rho_3\right).  \ee
+%
+If we performed this rotation along another direction\emdash i.e. $\hat{1}$,
+ $\hat{2}$, or a linear combination of directions\emdash we would find
+that the invariant component is still a linear combination of charged
+states. By enforcing isospin invariance, we can see that the only
+surviving $\rho$ meson state will be the charge-neutral state $\rho_3
+\equiv \rho_0$.\par
+%
+\subsection{Parity Symmetry}\label{subsec:parity}
+%
+We can further exclude entire isospin classes of mesons from
+contributing since the ground-state of nuclear matter (containing
+equal numbers of up and down spins) is a parity eigenstate, and thus
+the parity operator ${\cal P}$ acting on the ground-state produces
+%
+\be {\cal P}|{\cal O}\ket = \pm |{\cal O}\ket.  \ee
+%
+Noting that the parity operator is idempotent (${\cal P}^2 = {\mathbb
+  I}$), inserting the unity operator into the ground-state overlap
+should produce no effect;
+%
+\be \bra{\cal O}|{\cal O}\ket = \bra{\cal O}|{\mathbb I}|{\cal O}\ket
+= \bra{\cal O}|{\cal P}{\cal P}|{\cal O}\ket = \bra{\cal
+  O}|(\pm)^2|{\cal O}\ket = \bra{\cal O}|{\cal
+  O}\ket.  \ee
+%
+We now turn our attention to the parity transformations for various
+bilinear combinations that will accompany meson interactions. For
+Dirac spinors $\psi(x)$ and $\bar{\psi}(x)$ the parity transformation
+produces
+%
+\be \begin{array}{cc} \mathcal{P}\psi(t,\vec{x}\, )\mathcal{P} =
+  \gamma^0\psi(t,-\vec{x}\, ), \\[2mm]
+  \mathcal{P}\bar{\psi}(t,\vec{x}\, )\mathcal{P} =
+  \bar{\psi}(t,-\vec{x}\, )\gamma^0, \end{array} \ee
+%
+where we have removed the overall phase factor $\exp(i\phi)$ since
+this is unobservable and can be set to unity without loss of
+generalisation. We can also observe the effect of the parity
+transformation on the various Dirac field bilinears that may appear
+in the Lagrangian density. The five possible Dirac bilinears are:
+%
+\be \bar{\psi}\psi,\quad \bar{\psi}\gamma^\mu\psi,\quad
+i\bar{\psi}[\gamma^\mu,\gamma^\nu]\psi,\quad
+\bar{\psi}\gamma^\mu\gamma^5\psi,\quad i\bar{\psi}\gamma^5\psi, \ee
+%
+for scalar, vector, tensor, pseudo-vector and pseudo-scalar meson
+interactions respectively, where $\gamma_5$ is defined as
+%
+\be \label{eq:gam5} \gamma_5 = i\gamma_0\gamma_1\gamma_2\gamma_3 =
+%\left(\begin{array}{cccc}0&0&1&0\\0&0&0&1\\1&0&0&0\\0&1&0&0\end{array}\right),
+\left(\begin{array}{cc}0&{\mathbb I}\\{\mathbb I}&0\end{array}\right),
+  \ee
+%
+in the commonly used Dirac basis. By acting the above transformation
+on these bilinears we obtain a result proportional to the spatially
+reversed wavefunction $\psi(t,-\vec{x}\, )$,
+%
+\bea \mathcal{P}\bar{\psi}\psi \mathcal{P} &=&
++\bar{\psi}\psi(t,-\vec{x}\, ),\\[3mm]
+\mathcal{P}\bar{\psi}\gamma^\mu\psi \mathcal{P} &=& \left\{
+   \begin{array}{ll}
+     +\bar{\psi}\gamma^\mu\psi(t,-\vec{x}\, ) &\quad \mbox{for\ }
+     \mu=0,\\ -\bar{\psi}\gamma^\mu\psi(t,-\vec{x}\, ) &\quad \mbox{for\ }
+     \mu=1,2,3,
+   \end{array}
+\right.\\[3mm] \mathcal{P}\bar{\psi}\gamma^\mu\gamma^5\psi
+\mathcal{P} &=& \left\{
+   \begin{array}{ll}
+     -\bar{\psi}\gamma^\mu\gamma^5\psi(t,-\vec{x}\, ) &\quad \mbox{for\ }
+     \mu=0,\\ +\bar{\psi}\gamma^\mu\gamma^5\psi(t,-\vec{x}\, ) &\quad
+     \mbox{for\ } \mu=1,2,3,
+   \end{array}
+\right.\\[3mm] \mathcal{P}i\bar{\psi}\gamma^5\psi \mathcal{P} &=&
+-i\bar{\psi}\gamma^5\psi(t,-\vec{x}\, ).
+\eea
+%
+By inserting the above pseudo-scalar and pseudo-vector bilinears into
+the ground-state overlap as above, and performing the parity
+operation, we obtain a result equal to its negative, and so the
+overall expression \emph{must} vanish. For example
+%
+\be \langle \mathcal{O} | i\bar{\psi}\gamma^5\psi | \mathcal{O}
+\rangle = \langle \mathcal{O} | \mathcal{P} i\bar{\psi}\gamma^5\psi
+\mathcal{P} | \mathcal{O} \rangle = \langle \mathcal{O} |
+-i\bar{\psi}\gamma^5\psi | \mathcal{O} \rangle 
+%\stackrel{!}{=} 
+= 0. \ee
+%
+Thus all pseudo-scalar and pseudo-vector meson contributions\emdash
+such as those corresponding to $\pi$ and $K$\emdash provide no
+contribution to the ground-state in the lowest order. We will show
+later in Chapter~\ref{sec:fockterms} that mesons can provide higher
+order contributions, and the pseudo-scalar $\pi$ mesons are able to
+provide a non-zero contribution via Fock terms, though we will not
+calculate these contributions here.\par
+%
+
+\section{Fermi Momentum}\label{sec:kf}
+%
+Since we are dealing with fermions that obey the Pauli Exclusion
+Principle\footnote{That no two fermions can share a single quantum
+  state.}, and thus Fermi--Dirac statistics\footnote{The statistics of
+  indistinguishable particles with half-integer spin. Refer to
+  Appendix~\ref{sec:chempotderivn}.}, there will be restrictions on the
+quantum numbers that these fermions may possess. When considering
+large numbers of a single type of fermion, they will each require a
+unique three-dimensional momentum $\vec{k}$ since no two fermions may
+share the same quantum numbers.\par
+%
+For an ensemble of fermions we produce a `Fermi sea' of particles; a
+tower of momentum states from zero up to some value `at the top of the
+Fermi sea'. This value\emdash the Fermi momentum\emdash will be of
+considerable use to us, thus it is denoted $k_F$.\par
+%
+Although the total baryon density is a useful control parameter, many of
+the parameters of the models we wish to calculate are dependent on the
+density via $k_F$. The relation between the Fermi momentum and the
+total density is found by counting the number of momentum states in a
+spherical volume up to momentum $k_F$ (here, this counting is performed
+in momentum space). The total baryon density\emdash a number density
+in units of baryons/fm$^{3}$, usually denoted as just ${\rm
+  fm}^{-3}$\emdash is simply the sum of contributions from individual
+baryons, as
+%
+\be \label{eq:rho} \rho_{\rm total} = \sum_i \rho_i = \sum_i
+\frac{(2J_i +1)}{(2\pi)^3}\int \theta(k_{F_i}-|\vec{k}|) \, d^3k =
+\sum_i \frac{k_{F_i}^3}{3\pi^2}, \ee
+%
+where here, $i$ is the set of baryons in the model, $J_i$ is the spin
+of baryon $i$ (where for the leptons and the octet of baryons, $J_i =
+\half$), and $\theta$ is the Heaviside step function defined as
+%
+\be \label{eq:Heaviside} \theta(x) =
+\left\{ \begin{array}{ll}1,\ \ {\rm if} & x > 0\\0,\ \ {\rm if} & x <
+  0\end{array} \right. , \ee
+%
+which restricts the counting of momentum states to those between $0$
+and $k_F$.\par
+%
+We define the species fraction for a baryon $B$, lepton $\ell$, or
+quark $q$ as the density fraction of that particle, denoted by $Y_i$,
+such that
+%
+\be 
+\label{eq:Y}
+Y_i = \frac{\rho_i}{\rho_{\rm total}}\ ;\quad i\in \{
+%p,n,\Lambda,\Sigma^+,\Sigma^0,\Sigma^-,\Xi^0,\Xi^-,\ell,q 
+B,\ell,q\} \, . \ee
+%
+Using this quantity we can investigate the relative proportions of
+particles at a given total density.
+%
+
+\section{Chemical Potential}\label{sec:qftchempot}
+%
+In order to make use of statistical mechanics we must define the some
+important quantities. One of these will be the chemical potential
+$\mu$, also known as the Fermi energy $\epsilon_{F}$; the energy of a
+particle at the top of the Fermi sea, as described in
+Appendix~\ref{sec:chempotderivn}. This energy is the relativistic
+energy of such a particle, and is the energy associated with a Dirac
+equation for that particle. For the simple case of a non-interacting
+particle, this is
+%
+\be \label{eq:muepsf} \mu_B = \epsilon_{F_B} = \sqrt{k_{F_B}^2 +
+  M_B^2}. \ee
+%
+In the case that the baryons are involved in interactions with mesons,
+we need to introduce scalar and temporal self-energy terms, which (for
+example) for Hartree-level QHD using a mean-field approximation are
+given by
+%
+\be \label{eq:selfenergy}
+\Sigma^s_B = - g_{B\s} \bra\s\ket,\quad \Sigma^0_B = g_{B\w}\bra\w\ket
++ g_{\rho}I_{3B}\bra\rho\ket,
+\ee
+%
+where $I_{3B}$ is the isospin projection of baryon $B$, defined by the
+diagonal elements of Eq.~(\ref{eq:taus}), and where the scalar
+self-energy is used to define the baryon effective mass as
+%
+\be \label{eq:effM}
+M_B^* = M_B + \Sigma^s_B = M_B - g_{B\s} \bra\s\ket,
+\ee
+%
+These self-energy terms affect the energy of a Dirac equation, and
+thus alter the chemical potential, according to
+%
+\be
+\label{eq:mu_sw}
+\mu_B = \sqrt{k_{F_B}^2 + (M_B + \Sigma^s_B)^2}+\Sigma_B^0\ .  \ee
+%
+Eq~(\ref{eq:effM}) and Eq.~(\ref{eq:mu_sw}) define the important
+in-medium quantities, and the definition of each will become
+dependent on which model we are using.\par
+%
+For a relativistic system such as that which will consider here, each
+conserved quantity is associated with a chemical potential, and we can
+use the combination of these associated chemical potentials to obtain
+relations between chemical potentials for individual species. In our
+case, we will consider two conserved quantities: total baryon number
+and total charge, and so we have a chemical potential related to each
+of these. We can construct the chemical potential for each particle
+species by multiplying each conserved charge by its associated
+chemical potential to obtain a general relation. Thus
+%
+\be \label{eq:chempotrel} \mu_i = B_i \mu_n - Q_i \mu_e, \ee
+%
+where; $i$ is the particle species (which can be any of the baryons)
+for which we are constructing the chemical potential; $B_i$ and $Q_i$
+are the baryon number (`baryon charge', which is unitless) and
+electric charge (normalized to the proton charge) respectively; and
+$\mu_n$ and $\mu_e$ are the chemical potentials of neutrons and
+electrons, respectively. Leptons have $B_\ell=0$, and all baryons have
+$B_B=+1$. The relations between the chemical potentials for the octet
+of baryons are therefore derived to be
+%
+\be \label{eq:allmus}
+\begin{array}{rcrcrcl}
+\mu_\Lambda &=& \mu_{\Sigma^0} &=& \mu_{\Xi^0} &=& \mu_n, \\
+&&\mu_{\Sigma^-} &=& \mu_{\Xi^-} &=& \mu_n + \mu_e, \\
+&&\mu_p &=& \mu_{\Sigma^+} &=& \mu_n - \mu_e, \\
+&&&& \mu_\mu &=& \mu_e.
+\end{array}
+\ee
+%
+A simple example of this is to construct the chemical potential for
+the proton (for which the associated charges are $B_p = +1$ and $ Q_p
+= +1$);
+%
+\be \label{eq:betaeq} \mu_p = \mu_n - \mu_e.  \ee
+%
+This can be rearranged to a form that resembles neutron $\beta$-decay
+%
+\be
+\label{eq:n0beta}
+\mu_n = \mu_p + \mu_e.  \ee
+%
+\par
+%
+If we were to consider further conserved charges, such as lepton
+number for example, we would require a further associated chemical
+potential. In that example, the additional chemical potential would be
+for (anti)neutrinos $\mu_{\bar{\nu}}$. The antineutrino would be
+required to preserve the lepton number on both sides of the equation;
+the goal of such an addition. Since we shall consider that neutrinos
+are able to leave the system considered, we can ignore this
+contribution {\it ab inito}. The removal of this assumption would
+alter Eq.~(\ref{eq:n0beta}) to include the antineutrino, as would
+normally be expected in $\beta$-decay equations
+%
+\be \mu_n = \mu_p + \mu_e + \mu_{\bar{\nu}}.  \ee
+%
+
+\section{Explicit Chiral Symmetry (Breaking)}\label{sec:chiral}
+%
+One of the most interesting symmetries of QCD is chiral symmetry. If
+we consider the QCD Lagrangian density to be the sum of quark and
+gluon contributions, then in the massless quark limit ($m_q = 0$);
+%
+%%%%%%%%%%%%%%%%%%%%
+%\be
+%\label{eq:QCDm0lag}
+%{\cal L}_{\rm QCD} = {\cal L}_{g}+{\cal L}_{q}
+%= -\frac{1}{4g^2} {\rm Tr}\left[G_{\mu\nu} G^{\mu\nu}\right] +
+%i\sum_{f=1}^{N_f} \bar{\psi}_f D_{\mu}\gamma^{\mu} \psi_f, 
+%\ee
+%
+%where here, $D_\mu = (\del_\mu - igA_\mu)$ is the covariant
+%derivative, $g$ is the QCD coupling, $A_\mu$ are the gluon fields,
+%$G_{\mu\nu} = \left(\left[\del_\mu,A^a_\nu\right]
+%-gf^{abc}A_\mu^bA_\nu^c\right)$ is the gluon field strength tensor,
+%$f^{abc}$ are the SU(3) structure constants, and $\psi_f$ is the quark
+%spinor for flavor $f \in \{u,d,s,\ldots ,N_f\}$.\par
+%%%%%%%%%%%%%%%%%%%%
+%
+\bea
+\nonumber
+{\cal L}_{\rm QCD} &=& {\cal L}_g + {\cal L}_q \\
+\nonumber
+&=& -\reci{4}G_{\mu\nu}^aG_{a}^{\mu\nu}
++ \bar{\psi}_i i \gamma^\mu (D_\mu)_{ij} \psi_j
+\\
+\label{eq:QCDm0lag}
+&=& -\reci{4}G_{\mu\nu}^aG_{a}^{\mu\nu} +
+\bar{\psi}_i i\gamma^\mu\del_\mu \psi_i -
+gA^a_\mu\bar{\psi}_i\gamma^\mu T_{ij}^a\psi_j\ , \eea 
+%$T^a \equiv  are the generators of SU(3)
+where here, $\psi_i(x)$ is a quark field of color $i \in \{r,g,b\}$,
+$A_\mu^a(x)$ is a gluon field with color index $a \in \{1,\ldots,8\}$,
+$T_{ij}^a$ is a generator\footnote{For example, $T^a = \lambda^a/2$
+  using the Hermitian Gell-Mann matrices $\lambda_a$.} for SU(3), $g$
+is the QCD coupling constant, and $G_{\mu\nu}^a$ represents the
+gauge-invariant gluonic field strength tensor, given by
+%
+\be
+G_{\mu\nu}^a = \left[\del_\mu,A_\nu^a\right] - gf^{abc}A_\mu^b
+A_\nu^c\ ,
+\ee
+%
+written with the structure constants $f^{abc}$.
+%
+%If we consider i.e. $N_f = 2$ for now, we can group together the
+%flavour spinors in a single quark spinor
+%%
+%\be
+%\label{eq:udspinors}
+%\psi = \begin{pmatrix}\psi_u\\\psi_d\end{pmatrix}.
+%\ee
+%%
+Left- and right-handed components of Dirac fields can be
+separated using the projection operators
+%
+\be \psi_{L\atop R} = \frac{1\mp \gamma_5}{2}\psi, \ee
+%
+using the definition of $\gamma_5$ of Eq.~(\ref{eq:gam5}), and so the
+quark terms in the QCD Lagrangian density (the gluon terms are not
+projected) can be written in terms of these components as
+%
+\be {\cal L}_{q}^{(f)} = i\bar{\psi}^{(f)}_L D_{\mu}\gamma^{\mu}
+\psi^{(f)}_L + i\bar{\psi}^{(f)}_R D_{\mu}\gamma^{\mu} \psi^{(f)}_R.
+\ee
+%
+This Lagrangian density is invariant under rotations in U(1) of the left- and
+right-handed fields
+%
+\bea &{\rm U}(1)_L:& \psi_L \to e^{i\alpha_L}\psi_L, \quad
+\psi_R \to \psi_R, \\ &{\rm U}(1)_R:& \psi_R \to e^{i\alpha_R}\psi_R,
+\quad \psi_L \to \psi_L, \eea
+%
+where $\alpha_L$ and $\alpha_R$ are arbitrary phases. This invariance
+is the chiral ${\rm U}(1)_L\otimes {\rm U}(1)_R$ symmetry. The Noether
+currents associated with this invariance are then
+%
+\be J_L^\mu = \bar{\psi_L}\gamma^\mu \psi_L, \qquad J_R^\mu =
+\bar{\psi_R}\gamma^\mu \psi_R, \ee
+%
+and as expected, these currents are conserved, such that $\del_\mu
+J_L^\mu = \del_\mu J_R^\mu = 0$ according to the Dirac Equation. These
+conserved currents can be alternatively written in terms of conserved
+vector and axial-vector currents, as
+%
+\be J^\mu_{L} = \frac{V^\mu - A^\mu}{2}, \qquad J^\mu_{R} =
+\frac{V^\mu + A^\mu}{2}, \ee
+%
+where here, $V^\mu$ and $A^\mu$ denote the vector and axial-vector
+currents respectively\emdash the distinction of $A^\mu$ here from the
+gluon fields in Eq.~(\ref{eq:QCDm0lag}) is neccesary\emdash and these
+are defined by
+%
+\be V^\mu = \bar{\psi}\gamma^\mu\psi,\qquad A^\mu =
+\bar{\psi}\gamma^\mu\gamma_5\psi, \ee 
+%
+and which are also conserved, thus $\del_\mu V^\mu = \del_\mu A^\mu =
+0$. The chiral symmetry of ${\rm U}(1)_L\otimes {\rm U}(1)_R$ is
+therefore equivalent to invariance under transformations under ${\rm
+  U}(1)_V \otimes {\rm U}(1)_A$, where we use the transformations
+%
+\bea
+\label{eq:U1V}
+&{\rm U}(1)_V:& \psi \to e^{i\alpha_V}\psi,\qquad \bar{\psi} \to \psi^\dagger
+e^{-i\alpha_V} \gamma_0,\\
+\label{eq:U1A}
+&{\rm U}(1)_A:& \psi \to e^{i\alpha_A\gamma_5}\psi,\quad \ \bar{\psi} \to
+\psi^\dagger e^{-i\alpha_A\gamma_5} \gamma_0.
+\eea
+%
+\par
+%
+Using the anticommutation relation
+%
+\be \label{eq:anticommutation} \left\{\gamma_5,\gamma_\mu\right\} =
+\gamma_5\gamma_\mu + \gamma_\mu\gamma_5 = 0 \ee
+% 
+we can evaluate the effect that the vector and axial-vector
+transformations have on the QCD Lagrangian density, and we find that both
+transformations are conserved.
+%
+\iffalse 
+The chiral symmetry is defined by the chiral transformation
+as
+%
+\be
+\label{eq:chiral}
+\psi^\prime = {\cal U}\psi; \quad {\cal U} =
+\exp\left(-ig_5\gamma_5\half\tau_i\epsilon_i\right); \quad {\cal U}
+\in {\rm SU}(2) \ee
+%
+in which $\vec{\tau}$ operates in isospin- (flavor-) space, $\gamma_5$
+operates in Dirac-space, and where $g_5$ and $\vec{\epsilon}$ are
+parameters of the rotations in their respective spaces. Here,
+$\gamma_5$ is defined as
+%
+\be \gamma_5 = i\gamma_0\gamma_1\gamma_2\gamma_3 =
+\left(\begin{array}{cccc}0&0&1&0\\0&0&0&1\\1&0&0&0\\0&1&0&0\end{array}\right).
+  \ee
+%
+${\cal U}$ is a unitary matrix (${\cal U}^\dagger{\cal U} = I$), and because of the
+anticommutation between $\gamma_5$ and $\gamma_\mu$;
+%
+\be
+\left\{\gamma_5,\gamma_\mu\right\} = \gamma_5\gamma_\mu -
+\gamma_\mu\gamma_5 = 0,
+\ee
+%
+we have the relation
+%
+\be
+\gamma_\mu {\cal U} = {\cal U}^\dagger \gamma_\mu.
+\ee
+%
+Using this, we can write the transformation on the spinors as
+%
+\bea
+\nonumber
+&\psi^\prime &= {\cal U}\psi\\
+&\bar{\psi}^\prime &= \psi^\dagger{\cal U}^\dagger\gamma_0 =
+\psi^\dagger\gamma_0{\cal U} = \bar{\psi}{\cal U}
+\eea
+%
+If we now observe the effect of this transformation on the bilinear
+form in Eq.~(\ref{eq:QCDm0lag}) 
+%
+\be
+\bar{\psi}^\prime\Dslash\psi^\prime 
+= \bar{\psi}{\cal U}\gamma_\mu D^\mu{\cal U}\psi
+= \bar{\psi}\gamma_\mu D^\mu {\cal U}^\dagger {\cal U}\psi
+= \bar{\psi}\Dslash\psi,
+\ee
+%
+we can clearly see that this is invariant under the chiral
+transformation, Eq.~(\ref{eq:chiral}).\par
+%
+Provided that the quarks are massless, this symmetry is exactly
+conserved and the QCD Lagrangian density is symmetric with respect to
+rotations in the flavor space independently for right- and left-handed
+quarks. QCD therefore has the global symmetry described by the group
+${\rm SU}(N_{f})_R\times {\rm SU}(N_{f})_L$.\par
+%
+\fi
+%
+If we now consider a quark mass term ${\cal L}_m$ in the QCD
+Lagrangian density, the fermionic part becomes
+%
+\be {\cal L}^\psi_{\rm QCD} = {\cal L}_q + {\cal L}_m = 
+%\sum_{f=1}^{N_f}
+\bar{\psi}_i\left(i\gamma^\mu
+(D_\mu)_{ij}-m\delta_{ij}\right)\psi_j. \ee
+%
+%where $M$ is a diagonal matrix of quark masses. 
+For the purposes of these discussions, we can set the masses of the
+quarks to be equal without loss of generality.
+%, and thus $m_f = m \ \forall \ f$. 
+Although the massless Lagrangian density possesses both of the above
+symmetries, the axial vector symmetry\emdash and hence chiral
+symmetry\emdash is explicitly broken by this quark mass term;
+%
+\be
+\label{eq:mbreaking}
+{\cal L}_{m} = -\bar{\psi}m \psi \stackrel{{\rm U}(1)_A}{\longrightarrow}
+-\bar{\psi}m e^{2i\alpha_A}\psi \neq -\bar{\psi}m \psi. 
+\ee
+%
+The vector symmetry is nonetheless preserved when including this
+term.\par
+
+\section{Dynamical Chiral Symmetry (Breaking)}\label{sec:dynamicchiral}
+%
+Even with a massless Lagrangian density, it is possible that chiral
+symmetry becomes dynamically broken, and we refer to this as
+Dynamically Broken Chiral Symmetry, or DCSB.\par
+%
+Following the description of Ref.~\cite{Roberts:1994dr}, if we
+consider the basic Lagrangian density of QCD to be
+%
+\be {\cal L}_{\rm QCD} = \bar{\psi}_i\left(i\gamma^\mu (D_\mu)_{ij} -
+m \delta_{ij}\right) \psi_j - \reci{4}G_{\mu\nu}^aG^{\mu\nu}_a, \ee
+%
+with the definitions as in the previous section, of
+%
+\be
+G^a_{\mu\nu} = \del_\mu A^a_\nu - \del_\nu A^a_\mu - g
+f^{abc}A^b_\mu A^c_\nu, \quad 
+D_\mu = \del_\nu + i g A^a_\mu T^a,% = \del^\mu - ig A^\mu,
+\ee
+%
+with standard definitions of other terms, then we can write the sum of
+all QCD One-Particle Irreducible (1-PI) diagrams\footnote{Diagrams
+  that cannot be made into two separate disconnected diagrams by
+  cutting an internal line are called One-Particle Irreducible, or
+  1-PI.} with two external legs as shown in Fig.~\ref{fig:quarkDSE};
+illustrating the quark self-energy. The expression for the
+renormalized quark self-energy in $d$ dimensions is
+%
+\be \label{eq:quarkDSE} -i\Sigma(p) = \frac{4}{3}Z_r\, g^2 \! \int
+\frac{d^d q}{(2\pi)^d}
+(i\gamma_\mu)(iS(q))(iD^{\mu\nu}(p-q))(i\Gamma_\nu(q,p)), \ee
+%
+where $Z_r$ is a renormalization constant, $g$ is the QCD
+coupling, and $q$ is the loop momentum.\par
+%
+In the absence of matter fields or background fields (the
+Lorentz-covariant case), we can write this self-energy as a sum of
+Dirac-vector and Dirac-scalar components, as
+%
+\be \label{eq:LcovSE} \Sigma(p) = \pslash\; \Sigma_{\rm DV}(p^2) +
+\Sigma_{\rm DS}(p^2).  \ee
+%
+where $\Sigma_{\rm DV}(p^2)$ is the Dirac-vector component, and
+$\Sigma_{\rm DS}(p^2)$ is the Dirac-scalar component. These must both
+be functions of $p^2$, since there are no other Dirac-fields to
+contract with, and $\Sigma(p)$ is a Lorentz invariant quantity in this
+case.\par
+%
+For the purposes of our discussion in this section, we will
+approximate the Dirac-vector component of the self-energy to be
+$\Sigma_{\rm DV} \sim 1$, in which case the self-energy is dependent
+only on the Dirac-scalar component.\par
+%
+Even with a massless theory ($m = 0$) it is possible that the
+renormalized self-energy develops a non-zero Dirac-scalar component,
+thus $\Sigma_{\rm DS}(p^2) \neq 0$. This leads to a non-zero value for
+the quark condensate $\bra\bar{\psi}_q\psi_q\ket$, and in the limit of
+exact chiral symmetry, leads to the pion becoming a massless Goldstone
+boson. Thus chiral symmetry can be dynamically broken. With the
+addition of a Dirac-scalar component of the self-energy, the
+Lagrangian density becomes
+%
+\be {\cal L}_{QCD} = \bar{\psi}_i\left(i\gamma^\mu (D_\mu)_{ij} - (m +
+\Sigma_{\rm DS})\delta_{ij} \right) \psi_j -
+\reci{4}G_{\mu\nu}^aG^{\mu\nu}_a, \ee
+%
+\vfill
+%
+\begin{figure}[!h]
+\centering
+% \includegraphics[width=0.65\textwidth]{IMAGES/quarkDSE.eps}
+\caption[Quark self-energy (DSE) in QCD]{Feynman diagram for the QCD
+  self-energy for a quark, as given by the Dyson--Schwinger Equation
+  (DSE). The full expression for this is given in
+  Eq.~(\ref{eq:quarkDSE}). \protect\label{fig:quarkDSE}}
+\end{figure}
+%
+\clearpage
+%\vfill
+%
+and we can define a dynamic quark mass via the gap equation;
+%
+\be m^* = m + \Sigma_{\rm DS}. \ee
+%
+We will continue this discussion in Section~\ref{sec:njl}, in which we
+will describe a particular model for $\Sigma_{\rm DS}$ in
+order to describe DCSB.\par
+%
+\section{Equation of State}\label{sec:EoS}
+%
+In order to investigate models of dense matter, we need to construct
+an Equation of State (EOS), which is simply a relation between two or
+more state variables\emdash those which thermodynamically describe the
+current state of the system, such as temperature, pressure, volume, or
+internal energy\emdash under a given set of physical conditions. With
+this, we will be able to investigate various aspects of a model and
+compare differences between models in a consistent fashion.\par
+%
+For our purposes, we use the total baryon density $\rho_{\rm total}$
+as the control parameter of this system, and so we need to obtain the
+connection between, say, the energy density ${\cal E}$, the pressure
+$P$, and this total baryon density, i.e.
+%
+\be {\cal E} = {\cal E}(\rho_{\rm total}), \qquad P = P(\rho_{\rm
+  total}).  \ee
+%
+\par
+%
+State variables are important quantities to consider. Within any
+transition between states the total change in any state variable will
+remain constant regardless of the path taken, since the change is an
+exact differential, by definition. For the hadronic models described
+herein, the EOS are exact, in that they have an analytic form;
+%
+\be \label{eq:Panalytic} P(\rho_{\rm total}) = \rho_{\rm
+  total}^2\frac{\del}{\del\rho_{\rm total}}\left(\frac{{\cal
+    E}(\rho_{\rm total})}{\rho_{\rm total}}\right).  \ee
+%
+As simple as this exact form may seem, the derivative complicates
+things, and we will find it easier to calculate the pressure
+independently. Nonetheless, this expression will hold true. More
+interestingly, this expression is equivalent to the first law of
+thermodynamics in the absence of heat transfer; i.e.
+%
+\be PdV = - dE, \ee
+%
+(the proof of which can be found in Appendix~\ref{sec:firstlaw}) which
+assures us that the theory is thermodynamically consistent.\par
+%
+A notable feature of each symmetric matter EOS we calculate is the
+effect of saturation; whereby the energy per baryon for the system
+possesses a global minimum at a particular value of the Fermi
+momentum. This can be considered as a binding energy of the system. In
+symmetric matter (in which the densities of protons and neutrons are
+equal), the nucleon Fermi momenta are related via \mbox{$k_F = k_{F_n}
+  = k_{F_p}$}, and the energy per baryon (binding energy) $E$ is
+determined via
+%
+\be \label{eq:EperA} E = \left[ \reci{\rho_{\rm total}} \left( {\cal
+    E} -\sum_B \rho_BM_B\right) \right].  \ee
+%
+In order to reproduce (a chosen set of) experimental results, this
+value should be an extremum of the curve with a value of \mbox{$E_0 =
+  -15.86~{\rm MeV}$} at a density of \mbox{$\rho_0 = 0.16~{\rm
+    fm}^{-3}$} (or the corresponding Fermi momentum $k_{F_0}$).\par
+%
+The nucleon symmetry energy $a_{\rm sym}$ is approximately a measure
+of the energy difference between the energy per baryon (binding
+energy) of a neutron-only model and a symmetric nuclear model
+(essentially a measure of the breaking of isospin symmetry). A more
+formal expression (without assuming degeneracy between nucleon
+masses, as derived in Appendix~\ref{sec:symenergy}) is
+%
+\be \label{eq:a4}
+a_{\rm sym} = \frac{g_{\rho}^2}{3 \pi^2 m_\rho^2} k_{F}^3 
++ \reci{12} \frac{k_{F}^2}{\sqrt{k_{F}^2 + (M_p^*)^2}} 
++ \reci{12} \frac{k_{F}^2}{\sqrt{k_{F}^2 + (M_n^*)^2}} \, . 
+\ee
+%
+At saturation, this should take the value of $(a_{\rm sym})_0 =
+32.5~{\rm MeV}$ (for an analysis of values, see
+Ref.~\cite{Tsang:2008fd}).\par
+%
+Another important aspect of an EOS is the compression modulus $K$
+which represents the \emph{stiffness} of the EOS; the ability to
+withstand compression. This ability is intimately linked to the Pauli
+Exclusion Principle in that all other things being equal, a system
+with more available states (say, distinguishable momentum states) will
+have a softer EOS, and thus a smaller compression modulus. The
+compression modulus itself is defined as the curvature of the binding
+energy at saturation, the expression for which is
+%
+\be \label{eq:Kmod} K = \left[ k_F^2
+  \frac{d^2}{dk_F^2}\left(\frac{\cal E}{\rho_{\rm
+      total}}\right)\right]_{k_{F_{\rm sat}}} = 9 \left[ \rho_{\rm
+    total}^2 \frac{d^2}{d\rho_{\rm total}^2}\left(\frac{\cal
+    E}{\rho_{\rm total}}\right)\right]_{\rho=\rho_0}. \ee
+%
+The motivation for this is that by compressing the system, the energy
+per baryon will rise. The curvature at saturation determines how fast
+that rise will occur, and thus how resistant to compression the system
+is. Experimentally, this is linked to the properties of finite nuclei,
+particularly those with a large number of nucleons, and the binding of
+these within a nucleus.\par
+%
+According to Ref.~\cite{Serot:1984ey} this should have a value in the
+range $200$--$300~{\rm MeV}$, and we will calculate the value of
+$K$ for each of the models to follow for comparison.\par
+%
+
+\section{Phase Transitions}\label{sec:phasetransitions}
+%
+In order to consider transitions between different phases of matter we
+must use statistical mechanics. The simplest method of constructing a
+phase transition\emdash known as a `Maxwell transition'\emdash is an
+isobaric (constant pressure) transition constructed over a finite
+density range. A transition of this form remains useful in
+understanding the liquid--gas style phase transition that occurs
+within QHD, which is a first-order transition (similar to that of ice
+melting in a fluid) with the phases being separated by a non-physical
+negative-pressure region. The inclusion of a Maxwell transition to
+this simple model for QHD removes this unphysical region and replaces
+it with a constant pressure phase.\par
+%
+The method for constructing a Maxwell transition will not be covered
+here, though in-depth details can be found in
+Ref.~\cite{Muller:1995ji}. We can however extract the transition
+densities from Ref.~\cite{Serot:1984ey} to reproduce the results,
+which are shown later in Fig.~\ref{fig:EOS_plusmaxwell} for the
+various varieties of QHD. The more sophisticated method of
+constructing a phase transition\emdash the `Gibbs
+transition'~\cite{Glendenning:2001pe} that we have used for the
+results produced herein\emdash relies on a little more statistical
+mechanics. A comparison between the Maxwell and Gibbs methods for
+models similar to those used in this work can be found in
+Ref.~\cite{Bhattacharyya:2009fg}. For a full in-depth discussion of
+this topic, see Ref.~\cite{Reif}.\par
+%
+If we consider a homogeneous (suitable for these mean-field
+calculations) system with energy $E$, volume $V$, $N_m$ particles of
+type $m$, and entropy $S$ which depends on these parameters such that
+%
+\be S=S(E,V,N_1,\ldots,N_m), \ee
+%
+then we can consider the variation of the entropy in the system as a
+function of these parameters, resulting in
+%
+\be \label{eq:dSfullform} dS = \left(\frac{\del S}{\del
+  E}\right)_{V,N_1,\ldots,N_m} \ dE + \left(\frac{\del S}{\del
+  V}\right)_{E,N_1,\ldots,N_m} \ dV + \sum_{i=1}^m \ \left(\frac{\del
+  S}{\del N_i}\right)_{V,N_{j\neq i}} \ dN_i, \ee
+%
+using standard statistical mechanics notation whereby a subscript $X$
+on a partial derivative $\displaystyle{\left(\del A / \del
+  B\right)_{X}}$ denotes that $X$ is explicitly held constant.
+Eq.~(\ref{eq:dSfullform}) should be equal to the fundamental
+thermodynamic relation when the number of particles is fixed, namely
+%
+\be \label{eq:fundtherm} dS = \frac{\dbar Q}{T} = \frac{dE + PdV}{T}.
+\ee
+%
+Here, the symbol $\dbar$ denotes the inexact differential, since the
+heat $Q$ is not a state function\emdash does not have initial and
+final values\emdash and thus the integral of this expression is only
+true for infinitesimal values, and not for finite values.
+%
+Continuing to keep the number of each type of particle $N_i$ constant,
+a comparison of coefficients between
+Eqs.~(\ref{eq:dSfullform})~and~(\ref{eq:fundtherm}) results in the
+following relations:
+%
+\be \label{eq:invTdefs} \left(\frac{\del S}{\del
+  E}\right)_{V,N_i,\ldots,N_m} = \reci{T}, \quad \left(\frac{\del
+  S}{\del V}\right)_{E,N_i,\ldots,N_m} = \frac{P}{T}.  \ee
+%
+To provide a relation similar to Eq.~(\ref{eq:invTdefs}) for the case
+where $dN_i \neq 0$, one defines $\mu_j$\emdash the chemical potential
+per molecule\emdash as
+%
+\be \mu_i = -T\left(\frac{\del S}{\del N_i}\right)_{E,V,N_{j\neq i}}.
+\ee
+%
+We can now re-write Eq.~(\ref{eq:dSfullform}) with the definitions in
+Eq.~(\ref{eq:invTdefs}) for the case where the particle number can
+change, as
+%
+\be 
+\label{eq:dS}
+dS = \reci{T}dE + \frac{P}{T}dV - \sum_{i=1}^m \frac{\mu_i}{T}dN_i,
+\ee
+%
+which can be equivalently written in the form of the fundamental
+thermodynamic relation for non-constant particle number,
+%
+\be dE = TdS - PdV + \sum_{i=1}^m \mu_i dN_i.  \ee
+%
+If we now consider a system $X$ of two phases $A$ and $B$, then we can
+construct relations between their parameters by considering the
+following relations:
+%
+\bea
+\nonumber
+E_X &=& E_A + E_B, \\
+V_X &=& V_A + V_B, \\
+\nonumber
+N_X &=& N_A + N_B.
+\eea
+%
+If we consider that these quantities are conserved between phases, we
+find the following conservation conditions
+%
+\be%a
+%\nonumber 
+\label{eq:changesAB}
+\begin{array}{rcrcr}
+dE_X = 0 &\Rightarrow &dE_A + dE_B = 0 &\Rightarrow &dE_A = - dE_B, \\[2mm]
+%
+dV_X = 0 &\Rightarrow &dV_A + dV_B = 0 &\Rightarrow &dV_A = - dV_B,
+\\[2mm]
+%\nonumber
+%
+dN_X = 0 &\Rightarrow &dN_A + dN_B = 0 &\Rightarrow &dN_A = - dN_B .
+\end{array}
+\ee%a
+%
+\par
+%
+The condition for phase equilibrium for the most probable situation is
+that the entropy must be a maximum for
+$S=S_X(E_X,V_X,N_X)=S(E_A,V_A,N_A;E_B,V_B,N_B)$, which leads to
+%
+\be dS_X = dS_A + dS_B = 0.  \ee
+%
+Thus, inserting Eq.~(\ref{eq:dS}) we find
+%
+\be dS = \left(\reci{T_A} dE_A + \frac{P_A}{T_A} dV_A -
+\frac{\mu_A}{T_A} dN_A \right) + \left(\reci{T_B} dE_B +
+\frac{P_B}{T_B} dV_B - \frac{\mu_B}{T_B} dN_B \right).  \ee
+%
+If we now apply the result of Eq.~(\ref{eq:changesAB}) we can simplify
+this relation to
+%
+\be \label{eq:maxS} dS = 0 = \left(\reci{T_A} - \reci{T_B}\right) dE_A
++ \left(\frac{P_A}{T_A} - \frac{P_B}{T_B}\right) dV_A -\left(
+\frac{\mu_A}{T_A} - \frac{\mu_B}{T_B}\right) dN_A \ee
+%
+and thus for arbitrary variations of $E_A$, $V_A$ and $N_A$, each
+bracketed term must vanish separately, so that
+%
+\be \label{eq:eachvanishes} \reci{T_A} = \reci{T_B}, \quad
+\frac{P_A}{T_A} = \frac{P_B}{T_B}, \quad \frac{\mu_A}{T_A} =
+\frac{\mu_B}{T_B}.  \ee
+%
+Eq.~(\ref{eq:eachvanishes}) implies that at the phase transition the
+system will be isentropic ($dS=0$), isothermal ($dT=0$), isobaric
+($dP=0$), and isochemical ($d\mu=0$), where the terms
+$S$,~$T$,~$V$,~and~$\mu$ now refer to the mean values rather than for
+individual particles.\par
+%
+We only require two systems at any one time when considering a mixture
+of phases, for example, a neutron (`neutron phase') can transition to
+a proton and an electron (`proton and electron phase') provided that
+the condition $\mu_n = \mu_p + \mu_e$ is met.\par
+%
+%For phase transitions we need to consider some statistical mechanics. The conditions for any phase  
+%equilibrium is that the entropy must be a maximum for $S=S(E,V,N)$ which can be expanded as 
+%
+%\bea
+%\nonumber
+%&dS &= \left[ \left( \frac{\partial S_1}{\partial E_1}\right)_{V_1,N_1}-
+%\left( \frac{\partial S_2}{\partial E_2}\right)_{V_2,N_2} \right] dE_1 \\
+%\nonumber
+%&& \ \ + \left[ \left( \frac{\partial S_1}{\partial V_1}\right)_{E_1,N_1}-
+%\left( \frac{\partial S_2}{\partial V_2}\right)_{E_2,N_2} \right] dV_1 \\
+%\nonumber
+%&& \ \ \ + \left[ \left( \frac{\partial S_1}{\partial N_1}\right)_{E_1,V_1}-
+%\left( \frac{\partial S_2}{\partial N_2}\right)_{E_2,V_2} \right] dN_1 = 0. \\
+%&&  
+%\label{eq:maxS}
+%\eea
+%%
+%Eq.~(\ref{eq:maxS}) is satisfied when the temperature (and hence, energy) and pressure 
+%(hence volume) are held constant ($dE = dV = 0$), and when
+%%
+%\be
+%\label{eq:dSdN}
+%\qquad \left( \frac{\partial S_1}{\partial N_1}\right)_{E_1,V_1}=
+%\left( \frac{\partial S_2}{\partial N_2}\right)_{E_2,V_2},
+%\ee
+%%
+%which implies that the chemical potentials for each phase be equal, since
+%%
+%\be
+%\label{eq:dSdN:mu}
+%\qquad \mu_i = -T_i \left( \frac{\partial S_i}{\partial N_i}\right)_{E_i,V_i} ; \quad i=1,2.
+%\ee
+%%
+%Since chemical potential is simply the Gibbs free energy per particle,
+%%
+%\be
+%\label{eq:mu:Gibbs}
+%\qquad \mu = \frac{1}{N}G(T,P,N),
+%\ee
+%%
+%we see that we are really considering a Gibbs condition for phase equilibrium. This is more or 
+%less the justification for the Maxwell construction, though the calculations become quite complex.
+%%
+%The transitions that we will be most interested in is from hadronic matter to quark matter. To do this 
+%however, we will require a quark matter model, which we have not decided on yet. This will provide us 
+%with a model of a `hybrid star' - presumably hadronic near the surface with a quark core.
+%
+For a phase transition between hadronic- and quark-matter phases then,
+the conditions for stability are therefore that chemical, thermal, and
+mechanical equilibrium between the hadronic $H$, and quark $Q$ phases
+is achieved, and thus that the independent quantities in each phase
+are separately equal. Thus the two independent chemical potentials (as
+described in Sec.~\ref{sec:qftchempot}) $\mu_n$~and~$\mu_e$ are each
+separately equal to their counterparts in the other phase,
+i.e. $\left[(\mu_n)_H=(\mu_n)_Q\right]$, and
+$\left[(\mu_e)_H=(\mu_e)_Q\right]$ for chemical equilibrium;
+$\left[T_H=T_Q\right]$ for thermal equilibrium; and $\left[P_H =
+  P_Q\right]$ for mechanical equilibrium.\par
+%
+An illustrative example of these relations is shown in
+Fig.~\ref{fig:3d} in which the values of the independent chemical
+potentials $\mu_n$ and $\mu_e$, as well as the pressure $P$ for a
+hadronic phase and a quark phase are plotted for increasing values of
+total density $\rho_{\rm total}$. In this case, the quark matter data
+is calculated based on the hadronic matter data, using the chemical
+potentials in the hadronic phase as inputs for the quark phase
+calculations, and as such the chemical potentials are\emdash by
+construction\emdash equal between the phases. As this is an
+illustrative example of the relations between the phases, no
+constraints have been imposed to reproduce a phase transition yet.\par
+%
+In this figure, the low-density points correspond to small values of
+$\mu_n$, and we see that for densities lower than some phase
+transition density $\rho_{\rm total} < \rho_{\rm PT}$ the hadronic
+pressure is greater than the quark pressure and thus the hadronic
+phase is dominant. At the transition the pressures are equal, and thus
+both phases can be present in a mixed phase, and beyond the transition
+the quark pressure is greater than the hadronic pressure indicating
+that the quark phase becomes dominant.\par
+%
+Note that for all values of the total density, the chemical potentials
+in each phase are equal, as shown by the projection onto the
+$\mu_n$$\mu_e$ plane.\par
+%
+In our calculations, we will only
+investigate these two phases independently up to the phase transition,
+at which point we will consider a mixed phase, as shall be described
+in the next section.\par
+%
+\begin{figure}[!t]
+\centering
+% \includegraphics[width=0.9\textwidth]{IMAGES/paper_images/fig3.eps}
+\caption[Illustrative locus of phase transition variables]{(Color
+  Online) Illustrative locus of values for the independent chemical
+  potentials $\mu_e$ and $\mu_n$, as well as the pressure $P$ for
+  phases of hadronic matter and deconfined quark matter. Note that
+  pressure in each phase increases with density. and that a projection
+  onto the $\mu_n\mu_e$ plane is a single line, as ensured by the
+  chemical equilibrium condition. \protect\label{fig:3d}}
+\end{figure}
+%
+We consider both phases to be cold on the nuclear scale, and assume
+$T=0$ so the temperatures are also equal, again by construction. We
+must therefore find the point\emdash if it exists\emdash at which, for
+a given pair of independent chemical potentials, the pressures in both
+the hadronic phase and the quark phase are equal.\par
+%
+To find the partial pressure of any baryon, quark, or lepton species
+$i$ we use
+%
+\be \label{eq:pressures} P_i = \frac{\left(2J_B + 1\right) {\cal
+    N}_c}{3(2\pi)^3}\int \frac{\vec{k}^2\; \theta(k_{F_i} -
+  |\vec{k}|)}{\sqrt{\vec{k}^2+(M_i^*)^2}}\; d^3k, \ee
+%
+where the number of colors is ${\cal N}_c = 3$ for quarks, ${\cal N}_c
+= 1$ for baryons and leptons, and where $\theta$ is the Heaviside step
+function defined in Eq.~(\ref{eq:Heaviside}). To find the total
+pressure in each phase, we sum the pressures contributions in that
+phase. The pressure in the hadronic phase $H$ is given by
+%
+%\be P = \sum_i P_i \ ; \quad i \in \{H,Q\} \ee
+%
+%where the pressure for the hadronic phase $H$ is
+%
+\be \label{eq:Hpressure}
+P_H = \sum_j P_j  + \sum_\ell P_\ell + \sum_m P_m,
+%+ \sum_{\alpha=\w,\rho} \reci{2} m_\alpha^2 \bra\alpha\ket^2 -
+%\reci{2} m_\s^2 \bra\s\ket^2,
+\ee
+%
+in which $j$ represents the baryons, $\ell$ represents the leptons,
+$m$ represents the mesons appearing in the particular model being
+considered, if they appear, and the pressure in the quark phase $Q$ is
+given by
+%which is equivalent to Eq.~(\ref{eq:P_H}), and
+%
+\be \label{eq:Qpressure}
+P_Q = \sum_q P_q + \sum_\ell P_\ell - B,
+\ee
+%
+where $q$ represents the quarks, and $B$ denotes the bag energy
+density, which we shall discuss further in Section~\ref{sec:MITbag}.\par
+%
+%For the QMC model
+%described in Section~\ref{sec:qmc}, and a Fermi gas of quarks, both
+%with interactions with leptons for charge neutrality, a point exists
+%at which the condition of stability, as described above, is
+%satisfied.\par
+%
+%At this point it is equally favourable that hadronic matter and quark
+%matter are the dominant phase. Beyond this point the quark pressure
+%is greater than the hadronic pressure; the phase with a greater
+%pressure will be favoured, and we can imagine that this phase with a
+%greater pressure expells the phase with lower pressure.
+%
+%a system is in equilibrium when
+%the grand potential $\Omega$ is a minimum, and the pressure can be
+%defined as
+%
+%\be P=-\frac{\del\Omega}{\del V}; \quad \Omega=-N d\mu - S dT - P dV
+%\ee
+%
+%Thus a larger pressure indicates a 
+%Thus the quark phase will be more energetically favourable. 
+In order to determine the EOS beyond the point at which the pressures
+are equal, we need to consider the properties of a mixed phase.\par
+%
+
+\section{Mixed Phase} \label{sec:MixedPhase}
+
+Once we have defined the requirements for a phase transition between
+two phases, we must consider the possibility of a mixed phase (MP)
+containing proportions of the two phases. This adds a further degree
+of sophistication to a model; we can not only find equations of state
+for hadronic matter and quark matter and simply stitch them together,
+but we can also allow the transition between these to occur
+gradually.\par
+%
+To calculate the mixed phase EOS, we calculate the hadronic EOS with
+control parameter $\rho_{\rm total}$, and use the independent chemical
+potentials $\mu_n$ and $\mu_e$ as inputs to determine the quark matter
+EOS, since we can determine all other Fermi momenta given these two
+quantities. We increase $\rho_{\rm total}$ until we find a
+density\emdash if it exists\emdash at which the pressure in the quark
+phase is equal the pressure in the hadronic phase (if such a density
+cannot be found, then the transition is not possible for the given
+models).\par
+%
+Assuming that such a transition is possible, once we have the density
+and pressure at which the phase transition occurs, we change the
+control parameter to the quark fraction $\chi$ (which is an order
+parameter parameterizing the transition to the quark matter phase)
+which determines the proportions of hadronic matter and quark
+matter. If we consider the mixed phase to be composed of some fraction
+of hadronic matter and some fraction of quark matter, then the mixed
+phase of matter will have the following properties: the total density
+will be
+%
+\be 
+\label{eq:mp_rho}
+\rho_{\rm MP} = (1-\chi)\; \rho_{\rm HP} + \chi\; \rho_{\rm QP},
+\ee
+%
+where $\rho_{\rm HP}$ and $\rho_{\rm QP}$ are the densities in the
+hadronic and quark phases, respectively. A factor of three in the
+equivalent baryon density in the quark phase,
+%
+\be 
+\label{eq:equivrho}
+\rho_{\rm QP} = \reci{3}\sum_q \rho_q = (\rho_u + \rho_d + \rho_s)/3,
+\ee
+%
+arises because of the restriction that a baryon contains three
+quarks.\par
+%
+According to the condition of mechanical equilibrium detailed earlier,
+the pressure in the mixed phase will be
+%
+\be
+\label{eq:mp_P}
+P_{\rm MP} = P_{\rm HP} = P_{\rm QP}.
+\ee
+%
+\par
+%
+We can step through values $0\! <\! \chi\! <\! 1$ and determine the
+properties of the mixed phase, keeping the mechanical stability
+conditions as they were above. In the mixed phase we need to alter our
+definition of charge neutrality; while previously we have used the
+condition that two phases were independently charge-neutral, such as
+$n\to p^+ + e^-$, it now becomes possible that one phase is (locally)
+charged, while the other phase carries the opposite charge, making the
+system globally charge-neutral. This is achieved by enforcing
+%
+\be \label{eq:mp_charge}
+0 = (1-\chi)\; \rho^c_{\rm HP} + \chi\; \rho^c_{\rm QP} + 
+\rho^c_{\ell} \, ,
+\ee
+%
+where this time we are considering charge-densities, which are simply
+the sum of densities multiplying their respective charges
+%
+\be \rho^c_i = \sum_j Q_j \rho_j \ ; \quad i \in \{{\rm HP},{\rm
+  QP},\ell\}, \ee
+%
+where $j$ are the all individual particles modelled within the
+grouping $i$. For example, the quark charge-density in a non-interacting
+quark phase is given by
+%
+\be \label{eq:qp_charge} \rho^c_{\rm QP} = \sum_q Q_q \rho_q =
+\frac{2}{3}\rho_u - \reci{3}\rho_d - \reci{3}\rho_s.  \ee
+%
+\par
+%
+We continue to calculate the properties of the mixed phase for
+increasing values of $\chi$ until we reach $\chi = 1$, at which point
+the mixed phase is now entirely charge-neutral quark matter. This
+corresponds to the density at which the mixed phase ends, and a pure
+quark phase begins. We can therefore continue to calculate the EOS for
+pure charge-neutral quark matter, once again using $\rho_{\rm total}$
+as the control parameter, but now where the total density is the
+equivalent density as defined in Eq.~(\ref{eq:equivrho}).\par
+%
+
+\section{Stellar Matter} \label{sec:stellarmatter}
+%
+The equations of state described above are derived for homogeneous
+infinite matter. If we wish to apply this to a finite system we must
+investigate the manner in which large ensembles of particles are held
+together. The focus of this work is `neutron stars', and we must find
+a way to utilise our knowledge of infinite matter to provide insight
+to macroscopic objects. For this reason, we turn to the theory of
+large masses; General Relativity.\par
+%
+The Tolman--Oppenheimer--Volkoff (TOV)
+equation~\cite{Oppenheimer:1939ne} describes the conditions of
+stability against gravitational collapse for an EOS, i.e. in which the
+pressure gradient is sufficient to prevent gravitational collapse of
+the matter. The equations therefore relate the change in pressure with
+radius to various state variables from the EOS. To preserve
+continuity, the equations are solved under the condition that the
+pressure at the surface of the star \emph{must} be zero.\par
+%
+The TOV equation is given by
+%
+\be
+\label{eq:TOV:full}
+\ \ \frac{dP}{dr}=-\frac{ G \left( P / c^2 +\mathcal{E} \right)
+  \left(M(r)+4 r^3 \pi P / c^2 \right)} {r(r-2 G M(r) / c^2)}, \ee
+%
+or, in Planck units\footnote{In which certain fundamental physical
+  constants are normalized to unity, viz $\hbar = c = G = 1$.}
+%
+\be
+\label{eq:TOV:nat}
+\qquad \frac{dP}{dr}=-\frac{ \left( P+\mathcal{E} \right) \left(M(r)
+  +4 \pi r^{3} P\right)}{r(r -2M(r))}, \ee
+%
+where the mass within a radius $R$ is given by integrating the energy
+density, as
+%
+\be
+\label{eq:TOV:massdef}
+\qquad M(R) = \int_0^R 4 \pi r^{2} {\cal E}(r) \; dr.
+\ee
+%
+For a full derivation of these equations, refer to
+Appendix~\ref{sec:tovderiv}.\par
+%
+Supplied with these equations and a derived EOS, we can calculate
+values for the total mass and total radius of a star\footnote{Stellar
+  objects in these calculations are assumed to be static, spherically
+  symmetric, and non-rotating, as per the derivation of this
+  equation. For studies of the effect of rapid rotation in General
+  Relativity see Refs.~\cite{Lattimer:2004nj,Owen:2005fn}.} for a given
+central density. We refer to these values as the `stellar
+solutions.'\par
+%
+This is particularly interesting, since the mass of a neutron star is
+observable (either via observing a pair of objects rotating about a
+barycenter\footnote{A common centre of mass for the system, the point
+  about which both objects will orbit, which is the balance point of
+  the gravitational force. In this case, the mass measurements are
+  simplified.}, or some other indirect/proxy measurement), yet the
+radius is not directly observable, as stars are sufficiently distant
+that they all appear as `point-sources'. With these calculations, we
+produce a relationship between two quantities: the stellar mass and
+the stellar radius, of which only the mass is currently observable,
+and even this is not always so. This provides useful data for further
+theoretical work requiring both quantities, as well as an opportunity
+to place theoretical bounds on future experimental observations.\par
+%
+In addition to this data, since we are able to solve our equations for
+the radial distance from the centre of the star, we can provide data
+that current experiments can not; we can investigate the interior of a
+neutron star, by calculating the proportions of various particles at
+successive values of internal radius and/or density. This allows us to
+construct a cross-section of a neutron star, investigate the possible
+contents, and examine the effects that various changes to the models
+have on both the internal and external properties.\par
+%
+%\clearpage 
+
+\section{SU(6) Spin-Flavor Baryon-Meson Couplings}\label{sec:su6deriv}
+
+We have noted earlier that the coupling of baryons to mesons is
+dependent on isospin group. The physics leading to this result is
+highly non-trivial, but is often neglected in the literature. We will
+therefore outline the process involved in determining the relations
+between baryon-meson couplings.\par
+%
+In order to determine the normalized relations between the point
+vertex couplings of various mesons to the full baryon octet $g_{Bm}$
+it is common to express the octet as a $3\times 3$ matrix in flavor
+space as
+%
+\be B = \left( \
+\begin{matrix}
+\frac{\Sigma^0}{\sqrt{2}}+\frac{\Lambda}{\sqrt{6}} & \Sigma^+ & p \\
+\Sigma^- & -\frac{\Sigma^0}{\sqrt{2}}+\frac{\Lambda}{\sqrt{6}} & n \\
+-\Xi^- & \Xi^0 & -\frac{2 \Lambda}{\sqrt{6}}
+\end{matrix} \ \right).
+\ee
+%
+This has been constructed as an array where rows and columns are
+distinguished by rotations in flavor space, which can be seen if we
+observe the quark content of these baryons;
+%
+\be B = \left( \
+\begin{matrix}
+uds & \mathbf{d \to u} & uus & \mathbf{s \to d} & uud \\ \mathbf{u \to
+  d} & & & & \\ dds & & dus & & ddu \\ \mathbf{d \to s} & & & & \\ ssd
+& & uss & & sud
+\end{matrix} \ \right).
+\ee
+%
+The vector meson octet ($J^P=1^-$) can be written in a similar fashion as
+%
+\be \label{eq:Pvec}
+P^\textrm{vec}_\textrm{oct} = \left( \
+\begin{matrix}
+\frac{\rho^0}{\sqrt{2}}+\frac{\omega_8}{\sqrt{6}} & \rho^+ & K^{*+} \\
+\rho^- & -\frac{\rho^0}{\sqrt{2}}+\frac{\omega_8}{\sqrt{6}} & K^{*0} \\
+K^{*-} & \overline{K^{*0}} & -2\left(\frac{\omega_8}{\sqrt{6}} \right)
+\end{matrix} \ \right),
+\ee
+%
+which, along with the singlet state, $P_{\rm sing}^{\rm vec} =
+\reci{\sqrt{3}}{\rm diag}(\omega_0,\omega_0,\omega_0)$ defines the
+vector meson nonet
+%
+\be \label{eq:octplussing} P^{\rm vec} = P^{\rm vec}_{\rm oct} +
+P^{\rm vec}_{\rm sing}.  \ee
+%
+Furthermore, the scalar meson octet ($J^P=0^+$) can be written as
+%
+\be \label{eq:Psca}
+P^\textrm{sca}_\textrm{oct} = \left( \
+\begin{matrix}
+\frac{a_0^0}{\sqrt{2}}+\frac{\s_8}{\sqrt{6}} & a_0^+ & \kappa^+ \\
+a_0^- & -\frac{a_0^0}{\sqrt{2}}+\frac{\s_8}{\sqrt{6}} & \kappa^0 \\
+\kappa^- & \overline{\kappa^0} & -2\frac{\s_8}{\sqrt{6}}
+\end{matrix} \ \right),
+\ee
+%
+and along with singlet state $P^{\rm sca}_{\rm sing} =
+\reci{\sqrt{3}}{\rm diag}(\s_0,\s_0,\s_0)$, these define the scalar
+meson nonet. The meson octet matrices are constructed in a similar
+fashion to the baryon octet matrix;
+%
+\be
+P_\textrm{oct} = \left( \
+\begin{matrix}
+u\bar{u} & \mathbf{\bar{u} \to \bar{d}} & u\bar{d} & \mathbf{\bar{d}
+  \to \bar{s}} & u\bar{s} \\ \mathbf{u \to d} & & & & \\ d\bar{u} & &
+d\bar{d} & & d\bar{s} \\ \mathbf{d \to s} & & & & \\ s\bar{u} & &
+s\bar{d} & & s\bar{s}
+\end{matrix} \ \right).
+\ee
+%
+The singlet and octet representations of both $\omega$ and $\sigma$
+($\w_0, \w_8, \s_0, \s_8$, appearing in
+Eqs.~(\ref{eq:Pvec})--(\ref{eq:Psca})) are not however the physical
+particles which we wish to include in the model; these are linear
+combinations of the physical particles. Due to explicit SU(3)
+flavor-symmetry breaking ($m_s > m_u,\ m_d$), a mixture of the
+unphysical $\omega_8$ and $\w_0$ states produces the physical $\omega$
+and $\phi$ mesons, while a mixture of the unphysical $\sigma_8$ and
+$\s_0$ states produces the physical $\sigma$ and $f_0$ mesons, the
+properties of which we list in Appendix~\ref{sec:particleprops}.\par
+%
+The octet and singlet states are represented by linear combinations of
+quark-antiquark pairs. The state vectors for these are
+%
+\be
+\label{eq:quarklincombs}
+|\omega_8\ket = |\sigma_8\ket = \reci{\sqrt{6}} \left( |\bar{u}u\ket +
+|\bar{d}d\ket -2 |\bar{s}s\ket \right),\quad |\omega_0\ket =
+|\sigma_0\ket = \reci{\sqrt{3}} \left( |\bar{u}u\ket + |\bar{d}d\ket
+|+ |\bar{s}s\ket \right), \ee
+%
+where the normalizations arise by ensuring that 
+%
+\be
+\bra\xi|\xi\ket = 1;\quad \xi \in \{\omega_8,\omega_0,\sigma_8,\sigma_0\}.
+\ee
+%
+Since the quark contents of the physical states are predominantly 
+%
+\be \omega = \sigma = \reci{\sqrt{2}}\ (u\bar{u}+d\bar{d}),\quad {\rm
+  and} \quad \phi = f_0 = -s\bar{s}, \ee
+%
+we can replace the octet and singlet combinations with the physical
+states via the replacements of
+%
+\bea
+&\omega_8 = \reci{\sqrt{3}}\ \omega +
+\frac{2}{\sqrt{6}}\ \phi,\quad 
+&\omega_0 = \sqrt{\frac{2}{3}}\ \omega
+-\reci{\sqrt{3}}\ \phi,\\
+&\sigma_8 = \reci{\sqrt{3}}\ \sigma +
+\frac{2}{\sqrt{6}}\ f_0,\quad 
+&\sigma_0 = \sqrt{\frac{2}{3}}\ \sigma
+-\reci{\sqrt{3}}\ f_0. 
+\eea
+%
+Using these definitions, we can express the octet and singlet states 
+in terms of the physical states
+%
+\be P^\textrm{vec}_\textrm{oct} = \left( \
+\begin{matrix}
+\frac{\rho^0}{\sqrt{2}}+\frac{\omega}{\sqrt{18}}+\frac{\phi}{\sqrt{9}}
+& \rho^+ & K^{*+} \\ \rho^- &
+-\frac{\rho^0}{\sqrt{2}}+\frac{\omega}{\sqrt{18}}+\frac{\phi}{\sqrt{9}}
+& K^{*0} \\ K^{*-} & \overline{K^{*0}} &
+-2\left(\frac{\omega}{\sqrt{18}}+\frac{\phi}{\sqrt{9}}\right)
+\end{matrix} \ \right),
+\ee
+%
+\be P^\textrm{sca}_\textrm{oct} = \left( \
+\begin{matrix}
+\frac{a_0^0}{\sqrt{2}}+\frac{\sigma}{\sqrt{18}}+\frac{f_0}{\sqrt{9}}
+& a_0^+ & \kappa^{+} \\ a_0^- &
+-\frac{a_0^0}{\sqrt{2}}+\frac{\sigma}{\sqrt{18}}+\frac{f_0}{\sqrt{9}}
+& \kappa^{0} \\ \kappa^{-} & \overline{\kappa^{0}} &
+-2\left(\frac{\sigma}{\sqrt{18}}+\frac{f_0}{\sqrt{9}}\right)
+\end{matrix} \ \right).
+\ee
+%
+Each of the above mesons can interact with a pair of baryons in three
+possible SU(3) invariant ways, which we shall identify as $F$-style
+(anti-symmetric), $D$-style (symmetric) and $S$-style
+(singlet). The singlet mesons $\omega_0$ and $\sigma_0$ are associated
+with an $S$-style coupling, while the octet particles are associated
+with $F$- and $D$-style couplings.\par
+%
+To determine these $F$-, $D$-, and $S$-style couplings for the vector
+and scalar mesons we need to calculate the SU(3) invariant Lagrangian
+density coefficients symbolically for each isospin group, with each
+SU(3) invariant combination\footnote{Following the notation
+  of Ref.~\cite{Rijken:1998yy}.} given by:
+%
+\bea \nonumber \left[ \bar{B}BP \right]_F &= &{\rm Tr}(\bar{B}PB)-{\rm
+  Tr}(\bar{B}BP) \\ \nonumber &= &{\rm Tr}(\bar{B}P_{\rm oct}B)-{\rm
+  Tr}(\bar{B}BP_{\rm oct}), \\[2mm] \left[ \bar{B}BP \right]_D &=
+&{\rm Tr}(\bar{B}PB)+{\rm Tr}(\bar{B}BP)-\frac{2}{3}{\rm
+  Tr}(\bar{B}BP){\rm Tr}(P) \\ \nonumber &= &{\rm Tr}(\bar{B}P_{\rm
+  oct}B)+{\rm Tr}(\bar{B}BP_{\rm oct}), \\[2mm] \nonumber \left[
+  \bar{B}BP \right]_S &= &{\rm Tr}(\bar{B}B){\rm Tr}(P) \\ \nonumber
+&= &{\rm Tr}(\bar{B}B){\rm Tr}(P_{\rm sing}).\label{eq:SU3invcombs}
+\eea
+%
+where we have expanded the meson matrices $P$ according to
+Eq.~(\ref{eq:octplussing}), and we note that the octet matrices
+$\bar{B}$, and $B$ are traceless.\par
+%
+Together, these terms can be combined to form an interaction
+Lagrangian density for all possible SU(3) invariant interactions
+involving each meson isospin group, with octet and singlet coupling
+coefficients $F$, $D$, and $S$ (each defined separately for each
+isospin group) as
+%
+\be
+\label{eq:SU3intL}
+{\cal L}^{\rm int} = -\sqrt{2}\left\{ F\left[ \bar{B}BP\right]_F +D
+\left[ \bar{B}BP\right]_D \right\} - S\reci{\sqrt{3}} \left[
+  \bar{B}BP\right]_S, \ee
+%
+where the remaining numerical factors are introduced for
+convenience.\par
+%
+If we evaluate this Lagrangian density by matrix multiplication of
+$B$, the octet and singlet matrices of $P_{\rm vec}$, and $\bar{B} =
+B^{\dagger}\gamma^0$ in the combinations stated in
+Eq.~(\ref{eq:SU3invcombs}), we can extract the coefficients of each
+baryon-meson vertex in terms of $F$, $D$ and $S$ factors. These are
+summarized in Table~\ref{tab:FDScouplings} for vertices involving the
+physical vector mesons $\w$ and $\rho^0$ and $\phi$, for pairs of like
+baryons\footnote{As discussed in Section~\ref{sec:mfa}, any
+  flavor-changing meson-baryon interactions would produce a null
+  overlap of ground-state operators, and as such we only focus on the
+  like-baryon interactions of the form $g_{B\alpha}\bar{\psi}_B \alpha
+  \psi_{B^\prime} \delta_{BB^\prime}$ for a meson $\alpha$ in this
+  discussion.}.
+%the formulation of the Lagrangian densities we construct in each model
+%for which we calculate properties will rely on isospin grouped
+%spinors, and since we have enforced symmetries which prevent
+%interactions of charged mesons (refer to Section~\ref{subsec:rotational})
+%we do not include any flavour-changing interactions, and thus we
+%restrict our calcultions to contributions from terms proportional to
+%$\bar{\psi}_B\psi_{B^\prime} \delta_{BB^\prime}$. 
+The summary for the scalar mesons is the same under replacements of
+$\omega \to \sigma$, $\vec{\rho} \to \vec{a}_0$, and $\phi \to
+f_0$.\par
+%
+\vfill
+%
+\begin{table}[!h]
+\caption[$F$-, $D$-, and $S$-style couplings for
+  $\bar{B}BP$]{\protect\label{tab:FDScouplings}$F$-, $D$-, and
+  $S$-style couplings of like baryon-baryon pairs to vector mesons
+  used in these models, according to vertices of type $B + P \to
+  \bar{B}$. The summary for the scalar mesons is the same under the
+  replacements of $\w \to \s$, $\vec{\rho} \to \vec{a}_0$, and
+  $\phi\to f_0$.}
+\begin{center}
+\hrule
+\vspace{1mm}
+\hrule
+\vspace{2mm}
+\hspace{0.2cm}
+\centering
+\begin{tabular}{cc}
+\begin{minipage}[c]{0.5\textwidth}
+$\begin{array}{lrl}
+\overline{\Sigma^-}\Sigma^-\rho^0 \ & \propto & \ 2 F \\[2mm]
+\overline{\Sigma^-}\Sigma^-\omega \ & \propto & \ \frac{1}{9} \left(-6 D-\sqrt{6}S\right)           \\[2mm]
+\overline{\Sigma^-}\Sigma^-\phi   \ & \propto & \ \frac{1}{9} \left(-6 \sqrt{2}D+\sqrt{3} S\right)  \\[2mm]
+\overline{\Sigma^0}\Sigma^0\omega \ & \propto & \ \frac{1}{9} \left(-6 D-\sqrt{6}S\right)           \\[2mm]
+\overline{\Sigma^0}\Sigma^0\phi   \ & \propto & \ \frac{1}{9} \left(-6 \sqrt{2}D+\sqrt{3} S\right)  \\[2mm]
+\overline{\Sigma^+}\Sigma^+\rho^0 \ & \propto & \ -2 F \\[2mm]
+\overline{\Sigma^+}\Sigma^+\omega \ & \propto & \ \frac{1}{9} \left(-6 D-\sqrt{6}S\right)           \\[2mm]
+\overline{\Sigma^+}\Sigma^+\phi   \ & \propto & \ \frac{1}{9} \left(-6 \sqrt{2}D+\sqrt{3} S\right)  \\[2mm]
+ \end{array}$
+ \end{minipage}
+ & 
+ \begin{minipage}[c]{0.5\textwidth}
+$\begin{array}{lrl}
+\overline{\Lambda }\Lambda\omega \ & \propto & \ \frac{1}{9} \left(6 D-\sqrt{6} S\right)           \\[2mm]
+\overline{\Lambda }\Lambda \phi  \ & \propto & \ \frac{1}{9} \left(6 \sqrt{2} D+\sqrt{3}S\right)     \\[2mm]
+\overline{p}p\rho^0              \ & \propto & \ -D-F  \\[2mm]
+\overline{p}p\omega              \ & \propto & \ \frac{1}{9} \left(3 D-9 F-\sqrt{6} S\right)  \\[2mm]
+\overline{p}p\phi                \ & \propto & \ \frac{1}{9} \left(3 \sqrt{2} D-9 \sqrt{2} F+\sqrt{3}S\right)  \\[2mm]
+\overline{n}n\rho^0              \ & \propto & \ D+F  \\[2mm]
+\overline{n}n\omega              \ & \propto & \ \frac{1}{9} \left(3 D-9 F-\sqrt{6} S\right)  \\[2mm]
+\overline{n}n\phi                \ & \propto & \ \frac{1}{9} \left(3 \sqrt{2} D-9 \sqrt{2} F+\sqrt{3}S\right)  \\[2mm]
+ \end{array}$
+ \end{minipage}
+\end{tabular} 
+ \begin{minipage}[c]{0.5\textwidth}
+$\begin{array}{lrl}
+& & \\
+\overline{\Xi^-}\Xi^-\rho^0      \ & \propto & \ -D+F  \\[2mm]
+\overline{\Xi^-}\Xi^-\omega      \ & \propto & \ \frac{1}{9} \left(3 D+9 F-\sqrt{6}S\right) \\[2mm]
+\overline{\Xi^-}\Xi^-\phi        \ & \propto & \ \frac{1}{9} \left(3 \sqrt{2} D+9 \sqrt{2}F+\sqrt{3} S\right)  \\[2mm]
+\overline{\Xi^0}\Xi^0\rho^0      \ & \propto & \ D-F  \\[2mm]
+\overline{\Xi^0}\Xi^0\omega      \ & \propto & \ \frac{1}{9} \left(3 D+9 F-\sqrt{6}S\right)  \\[2mm]
+\overline{\Xi^0}\Xi^0\phi        \ & \propto & \ \frac{1}{9} \left(3 \sqrt{2} D+9 \sqrt{2}F+\sqrt{3} S\right)  \\[2mm]
+ \end{array}$
+\end{minipage}
+%
+\vspace{1mm}
+\hrule
+\vspace{1mm}
+\hrule
+\end{center}
+\end{table}
+%
+The physical $\phi$ and $f_0$ states are purely strange quark
+components. These do not couple to nucleons significantly (since
+nucleons contain only up and down valence quarks) the only way to
+produce these mesons is via gluons. Thus we set the (normalized or
+not) couplings of these mesons to zero; $g_{B\phi}=g_{Bf_0}=0$. We are
+then left with the physical $\sigma$ and $\omega$ mesons as the
+effective meson degrees of freedom.\par
+%
+If we denote the \emph{total} (but not normalized) coupling (now
+including all prefactors of Eq.~(\ref{eq:SU3intL})) of a (like) baryon
+pair $\bar{B}B$ to a meson $\alpha$ by $f_{B\alpha}$, and we calculate
+the SU(3) invariant combinations for the singlet $\w_0$ and mixed
+state $\w_8$, we can use the relation between these normalizations
+from Eq.~(\ref{eq:quarklincombs}) to relate the $S$-style couplings to
+the remaining couplings via
+%
+\be -\frac{S}{3} = f_{N\w_0} = \sqrt{2}f_{N\w_8} =
+\frac{\sqrt{2}}{\sqrt{3}}(D-3F), \ee
+%
+and so we can reduce the relation of the couplings to
+%
+\be
+\label{eq:strangecoupling}
+S = \sqrt{6}(3F-D),
+\ee
+%
+and we can therefore find the couplings of the singlet $\w_0$ meson in
+terms of just $F$ and $D$ factors. After removing the strange quark
+components and substituting the result of
+Eq.~(\ref{eq:strangecoupling}) we obtain a summary of couplings as
+shown in Table~\ref{tab:FDcouplings}.\par
+%
+\begin{table}[!b]
+\caption[$F$- and $D$-style couplings for
+  $\bar{B}BP$]{\protect\label{tab:FDcouplings}Couplings of like
+  baryon-baryon pairs to vector mesons used in these models, according
+  to vertices of type $B + P \to \bar{B}$ using the relation of
+  Eq.~(\ref{eq:strangecoupling})}
+\begin{center}
+\hrule
+\vspace{1mm}
+\hrule
+\vspace{2mm}
+\hspace{0.2cm}
+\centering
+\begin{tabular}{ccc}
+\begin{minipage}[c]{0.3\textwidth}
+%$\begin{array}{rclrr}
+%    &  \overline{\Sigma^-} &  \leftarrow  &   \Sigma^-   +   \rho^0  \   =&    2F                                     \\[2mm]
+%    &  \overline{\Sigma^-} &  \leftarrow  &   \Sigma^-   +   \omega  \   =&    -\frac{2D}{3}                          \\[2mm]
+%    &  \overline{\Sigma^0} &  \leftarrow  &  \Sigma^0    +   \omega  \   =&    -\frac{2D}{3}                 \\[2mm]
+%    &  \overline{\Sigma^0} &  \leftarrow  &  \Lambda     +   \rho^0  \   =&    -\frac{2D}{\sqrt{3}}          \\[2mm]
+%    &  \overline{\Sigma^+} &  \leftarrow  &  \Sigma^+    +   \rho^0  \   =&    -2   F                        \\[2mm]
+%    &  \overline{\Sigma^+} &  \leftarrow  &  \Sigma^+    +   \omega  \   =&    -\frac{2D}{3}                 \\[2mm]
+% \end{array}$
+%%%
+$\begin{array}{lrr}
+\overline{\Sigma^-}\Sigma^-\rho^0  \  & \propto &    2F                    \\[2mm]
+\overline{\Sigma^-}\Sigma^-\omega  \  & \propto &    -\frac{2D}{3}         \\[2mm]
+\overline{\Sigma^0}\Sigma^0\omega  \  & \propto &    -\frac{2D}{3}         \\[2mm]
+\overline{\Sigma^+}\Sigma^+\rho^0  \  & \propto &    -2   F                \\[2mm]
+\overline{\Sigma^+}\Sigma^+\omega  \  & \propto &    -\frac{2D}{3}         \\[2mm]
+ \end{array}$
+ \end{minipage}
+ & 
+ \begin{minipage}[c]{0.3\textwidth}
+% $  \begin{array}{rclrr}
+%     &  \overline{p}        &  \leftarrow  &   p          +   \rho^0  \   =&    -D-F                                   \\[2mm]
+%     &  \overline{p}        &  \leftarrow  &   p          +   \omega  \   =&    \frac{D}{3}-F                          \\[2mm]
+%     &  \overline{n}        &  \leftarrow  &   n          +   \rho^0  \   =&    D+F                                    \\[2mm]
+%     &  \overline{n}        &  \leftarrow  &   n          +   \omega  \   =&    \frac{D}{3}-F                          \\[2mm]
+%     &  \overline{\Lambda}  &  \leftarrow  &  \Sigma^0    +   \rho^0  \   =&    -\frac{2D}{\sqrt{3}}          \\[2mm]
+%     &  \overline{\Lambda}  &  \leftarrow  &  \Lambda     +   \omega  \   =&    \frac{2D}{3}                  \\[2mm]
+% \end{array}$
+%%%
+ $  \begin{array}{lrr}
+\overline{p}p\rho^0              \  & \propto &   -D-F                   \\[2mm]
+\overline{p}p\omega              \  & \propto &   \frac{D}{3}-F          \\[2mm]
+\overline{n}n\rho^0              \  & \propto &   D+F                    \\[2mm]
+\overline{n}n\omega              \  & \propto &   \frac{D}{3}-F          \\[2mm]
+\overline{\Lambda}\Lambda\omega  \  & \propto &   \frac{2D}{3}           \\[2mm]
+ \end{array}$
+ \end{minipage}
+ &
+\begin{minipage}[c]{0.3\textwidth}
+%  $\begin{array}{rclrr}
+%    &  \overline{{{\Xi }^-}}   & \leftarrow &   {{\Xi}^-}   +   {{\rho }^0}       \    =&       -D+F \\[2mm]
+%    &  \overline{{{\Xi }^-}}   & \leftarrow &   {{\Xi}^-}   +   \omega            \    =&    \frac{D}{3}+F \\[2mm]
+%    &  \overline{{{\Xi }^0}}   & \leftarrow &   {{\Xi}^0}   +   {{\rho }^0}       \    =&        D-F \\[2mm]
+%    &  \overline{{{\Xi }^0}}   & \leftarrow &   {{\Xi}^0}   +   \omega            \    =&      \frac{D}{3}+F \\[2mm]
+%  \end{array}$
+%%%
+  $\begin{array}{lrr}
+\overline{{{\Xi }}^-}{{\Xi}^-}{{\rho }^0}   \   & \propto &    -D+F          \\[2mm]
+\overline{{{\Xi }}^-}{{\Xi}^-}\omega        \   & \propto &    \frac{D}{3}+F \\[2mm]
+\overline{{{\Xi }}^0}{{\Xi}^0}{{\rho }^0}   \   & \propto &    D-F           \\[2mm]
+\overline{{{\Xi }}^0}{{\Xi}^0}\omega        \   & \propto &    \frac{D}{3}+F \\[2mm]
+  \end{array}$
+\end{minipage}
+\end{tabular}
+\vspace{1mm}
+\hrule
+\vspace{1mm}
+\hrule
+\vspace{10mm}
+\end{center}
+\end{table}
+%
+We note however that the couplings in Tables~\ref{tab:FDScouplings}
+and \ref{tab:FDcouplings} do not display isospin symmetry manifestly,
+though our original Lagrangian density (refer to
+Section~\ref{sec:lagrangiandensity}) was constructed in terms of
+isospin groups only with common coefficients. This can be remedied by
+considering a \emph{general} Lagrangian density constructed from
+isospin groups, which we shall restrict to terms involving like
+baryons and the mesons we are interested in, to give
+%
+\bea
+%\begin{split}
+\nonumber \mathcal{L}_{\rm int}^{\rm oct} &=&
+-f_{N\rho}(\overline{N}\vec{\tau}^{\rm T}N)\cdot\vec{\rho}
++if_{\Sigma\rho}(\vec{\overline{\Sigma}}\times\vec{\Sigma})\cdot\vec{\rho}
+%-f_{\Lambda\Sigma\rho}(\overline{\Lambda}\mbox{\boldmath $\Sigma$}
+%+\overline{\mbox{\boldmath $\Sigma$}}\Lambda)\cdot\vec{\rho}
+-f_{\Xi\rho}(\overline{\Xi}\vec{\tau}^{\rm
+  T}\Xi)\cdot\vec{\rho} \\
+%& -f_{\Lambda NK}[
+%(\overline{N}K)\Lambda+\overline{\Lambda}(\overline{K}N) ]
+%-f_{\Xi\Lambda K}[
+%(\overline{\Xi}K_c)\Lambda+\overline{\Lambda}(\overline{K_c}\Xi) ]
+%\\ & -f_{\Sigma NK}[ \overline{\mbox{\boldmath
+%$\Sigma$}}\cdot(\overline{K}\mbox{\boldmath $\tau$}^{\rm T}N) +
+%(\overline{N}\mbox{\boldmath $\tau$}^{\rm T}K)\cdot\mbox{\boldmath
+%$\Sigma$} ] -f_{\Xi\Sigma K}[ \overline{\mbox{\boldmath
+%$\Sigma$}}\cdot(\overline{K_c}\mbox{\boldmath $\tau$}^{\rm T}\Xi)
+%+(\overline{\Xi}\mbox{\boldmath $\tau$}^{\rm
+%T}K_c)\cdot\mbox{\boldmath $\Sigma$} ] \\
+\label{eq:octintL}
+&& - f_{N\omega}(\overline{N}N)\omega -
+f_{\Lambda\omega}(\overline{\Lambda}\Lambda)\omega
+-f_{\Sigma\omega}(\vec{\overline{\Sigma}}\cdot\vec{\Sigma})\omega -
+f_{\Xi\omega}(\overline{\Xi}\Xi)\omega,
+%\end{split}
+\eea
+%
+where the $N$, $\Lambda$, and $\Xi$ isospin groups are defined as
+before as
+%
+\be N = \begin{pmatrix}p\\n\end{pmatrix}, \quad \Lambda
+  = \begin{pmatrix}\Lambda\end{pmatrix},
+ \quad \Xi = \begin{pmatrix}\Xi^0\\ \Xi^-\end{pmatrix}. \ee
+%
+%\be
+%K = \begin{pmatrix}K^+\\K^0\end{pmatrix} \quad K_c = \begin{pmatrix}\overline{K^0}\\ -K^-\end{pmatrix}
+%\ee
+%
+The $\rho$ mesons terms are defined in isospin space as linear
+combinations of the physical charged states (as we did in
+Section~\ref{subsec:rotational}) as
+%
+\be \nonumber \rho^- = \reci{\sqrt{2}}(\rho_1 - i\rho_2), \quad \rho^+
+= \reci{\sqrt{2}}(\rho_1 + i\rho_2), \quad \rho^0 = \rho_3, \ee
+%
+or, equivalently as
+%
+\be \rho_1 = \reci{\sqrt{2}}(\rho^+ + \rho^-), \quad \rho_2 =
+\frac{i}{\sqrt{2}}(\rho^- - \rho^+), \quad \rho_3 = \rho^0, \ee
+%
+with the same convention for the replacement of $\vec{\rho} \to
+\vec{\Sigma}$. This gives the expansion
+%
+\be \vec{\Sigma}\cdot\vec{\rho} = \Sigma^+\rho^- + \Sigma^0\rho^0 +
+\Sigma^-\rho^+ .  \ee
+%
+We can expand the Lagrangian density term by term to find the
+individual interactions
+%
+\bea \nonumber (\overline{N}\vec{\tau}^{\rm T}N)\cdot\vec{\rho} &=&
+(\overline{p} \ \ \overline{n}) \ \tau^{\rm T}_i
+\rho^i \begin{pmatrix}p\\n\end{pmatrix} \\ \nonumber &=&
+  (\overline{p}n+\overline{n}p)\rho_1 +
+  i(\overline{p}n-\overline{n}p)\rho_2 + (\overline{p}p -
+  \overline{n}n)\rho_3 \\ \nonumber &=&\reci{\sqrt{2}}
+  (\overline{p}n+\overline{n}p)(\rho_+ + \rho_-)
+  -\frac{1}{\sqrt{2}}(\overline{p}n-\overline{n}p)(\rho_- - \rho_+) +
+  (\overline{p}p - \overline{n}n)\rho_0 \\ &=& \overline{p}p\rho_0 -
+  \overline{n}n\rho_0 +\sqrt{2}\overline{p}n\rho_+ +
+  \sqrt{2}\overline{n}p\rho_-\ , \eea
+%
+where we note that a term $\bar{B}BP$ indicates the annihilation of a
+baryon $B$ with a meson $P$, and the creation of a baryon $\bar{B}$
+according to the reaction $B+P\to\bar{B}$. Continuing to expand terms,
+for the $\Sigma$ baryons we have
+%
+\bea \nonumber
+(\vec{\overline{\Sigma}}\times\vec{\Sigma})\cdot\vec{\rho} &=& -i
+\rho^+ \left(\Sigma^-\overline{\Sigma^0}-\Sigma^0\overline{\Sigma^+}
+\right) -i \rho^- \left(
+\Sigma^0\overline{\Sigma^-}-\Sigma^+\overline{\Sigma^0} \right) %\\ &&
+-i \rho^0 \left(
+\Sigma^+\overline{\Sigma^+}-\Sigma^-\overline{\Sigma^-} \right)\ ,\\[1mm]
+&& \eea
+%
+and for the $\Xi$ baryons,
+%
+%\be
+%( \overline{\Lambda}\mbox{\boldmath $\Sigma$}+\overline{\mbox{\boldmath $\Sigma$}}\Lambda ) 
+%\cdot \vec{\rho} = \overline{\Lambda}(\Sigma^+\rho_- + \Sigma^0\rho_0 + \Sigma^-\rho_+)
+%+ (\overline{\Sigma^+}\rho_- + \overline{\Sigma^0}\rho_0 + \overline{\Sigma^-}\rho_+)\Lambda
+%\ee
+%
+\bea \nonumber (\overline{\Xi}\vec{\tau}^{\rm T}\Xi)\cdot\vec{\rho}
+&=& (\overline{\Xi^0} \ \ \overline{\Xi^-}) \ \tau^{\rm T}_i
+\rho^i \begin{pmatrix}\Xi^0\\ \Xi^-\end{pmatrix}\\ \nonumber &=&
+  (\overline{\Xi^0}\Xi^-+\overline{\Xi^-}p)\rho_1 +
+  i(\overline{\Xi^0}\Xi^--\overline{\Xi^-}\Xi^0)\rho_2 +
+  (\overline{\Xi^0}\Xi^0 - \overline{\Xi^-}\Xi^-)\rho_3 \\[2mm] &=&
+  \overline{\Xi^0}\Xi^0\rho_0 - \overline{\Xi^-}\Xi^-\rho_0
+  +\sqrt{2}\overline{\Xi^0}\Xi^-\rho_+ +
+  \sqrt{2}\overline{\Xi^-}\Xi^0\rho_-. \\ \nonumber \eea
+%
+%\begin{eqnarray}
+%\nonumber
+%&(\overline{N}K)\Lambda+\overline{\Lambda}(\overline{K}N) 
+%&= ( \overline{p} \ \ \overline{n} ) \begin{pmatrix}K^+\\K^0\end{pmatrix}\Lambda 
+%+ \overline{\Lambda}( \overline{K^+} \ \ \overline{K^0} )\begin{pmatrix}p\\n\end{pmatrix}\\
+%&&=\overline{p}K^+\Lambda + \overline{n}K^0\Lambda 
+%+ \overline{\Lambda}\overline{K^+}p + \overline{\Lambda}\overline{K^0}n
+%\end{eqnarray}
+%
+%\begin{eqnarray}
+%\nonumber
+%&(\overline{\Xi}K)\Lambda+\overline{\Lambda}(\overline{K}\Xi) 
+%&= ( \overline{\Xi^0} \ \ \overline{\Xi^-} ) \begin{pmatrix}\overline{K^0}\\-K^-\end{pmatrix}\Lambda 
+%+ \overline{\Lambda}( K^0 \ \ -\overline{K^-} )\begin{pmatrix}\Xi^0\\\Xi^-\end{pmatrix}\\
+%&&=\overline{\Xi^0}\overline{K^0}\Lambda - \overline{\Xi^-}K^-\Lambda 
+%+ \overline{\Lambda}K^0\Xi^0 - \overline{\Lambda}\overline{K^-}\Xi^-
+%\end{eqnarray}
+%
+%\begin{eqnarray}
+%\nonumber
+%& \overline{\mbox{\boldmath $\Sigma$}}\cdot(\overline{K}\mbox{\boldmath $\tau$}^{\rm T}N) 
+%+ (\overline{N}\mbox{\boldmath $\tau$}^{\rm T}K)\cdot\mbox{\boldmath $\Sigma$}
+%&=(\overline{K^+} \ \ \overline{K^0}) \ \tau^{\rm T}_i \Sigma^i \begin{pmatrix}p\\n\end{pmatrix}
+%+ (\overline{p} \ \ \overline{n})  \ \tau^{\rm T}_i \Sigma^i \begin{pmatrix}K^+\\K^0\end{pmatrix} \\
+%\nonumber
+%&&= \sqrt{2}\ \overline{K^0}p\overline{\Sigma^+} + \sqrt{2}\ \overline{K^+}n\overline{\Sigma^-} 
+%+ \overline{K^+}p\overline{\Sigma^0} - \overline{K^0}n\overline{\Sigma^0} \\
+%&&+ \sqrt{2}\ K^0\overline{p}\Sigma^+ + \sqrt{2}\ K^+\overline{n}\Sigma^- 
+%+ K^+\overline{p}\Sigma^0 - K^0\overline{n}\Sigma^0
+%\end{eqnarray}
+%
+%\begin{eqnarray}
+%\nonumber
+%& \overline{\mbox{\boldmath $\Sigma$}}\cdot(\overline{K_c}\mbox{\boldmath $\tau$}^{\rm T}\Xi) 
+%+ (\overline{\Xi}\mbox{\boldmath $\tau$}^{\rm T}K_c)\cdot\mbox{\boldmath $\Sigma$}
+%&=(K^0 \ -\overline{K^-}) \ \tau^{\rm T}_i \Sigma^i \begin{pmatrix}\Xi^0\\ \Xi^-\end{pmatrix}
+%+ (\overline{\Xi^0} \ \ \overline{\Xi^-})  \ \tau^{\rm T}_i \Sigma^i \begin{pmatrix}\overline{K^0}\\-K^-\end{pmatrix} \\
+%\nonumber
+%&&= \sqrt{2}\ \overline{K^-}\Xi^0\overline{\Sigma^+} + \sqrt{2}\ \overline{K^0}\Xi^-\overline{\Sigma^-} 
+%+ \overline{K^0}\Xi^0\overline{\Sigma^0} - \overline{K^-}\Xi^-\overline{\Sigma^0} \\
+%&&+ \sqrt{2}\ K^-\overline{\Xi^0}\Sigma^+ + \sqrt{2}\ K^0\overline{\Xi^-}\Sigma^-
+%+ K^0\overline{\Xi^0}\Sigma^0 - K^-\overline{\Xi^-}\Sigma^0
+%\end{eqnarray}
+%
+%Now the diagonals:
+%
+The iso-scalar terms are more straightforward;
+%
+\bea (\overline{N}N)\omega &=& \overline{p}p\omega +
+\overline{n}n\omega, \\[1mm]
+%
+\overline{\Lambda}\Lambda\omega && (\textrm{requires no expansion}), \\[1mm]
+%
+( \vec{\overline{\Sigma}}\cdot\vec{\Sigma})\omega &=&
+\overline{\Sigma^+}\Sigma^+\omega + \overline{\Sigma^0}\Sigma^0\omega
++ \overline{\Sigma^-}\Sigma^-\omega, \\[1mm]
+%
+(\overline{\Xi}\Xi)\omega &=& \overline{\Xi^0}\Xi^0\omega +
+\overline{\Xi^-}\Xi^-\omega.  \eea
+%
+\par
+%
+Once we have calculated the full interaction Lagrangian density, and
+the $F$ and $D$ coefficients of each interaction, we have factors of
+the following form:
+%
+\be {\cal L}_{\rm int} = \sum_B \sum_m A_{Bm} f_{Bm} X_{Bm}; \quad
+X_{Bm} = C_{Bm} \bar{B}Bm, \ee
+%
+where $A_{\Sigma \rho} = i$, and for all other interactions $A_{Bm}=
+-1$. The term $X_{Bm}$ is the expanded interaction term (after
+expanding cross products, etc.) arising from the \emph{general}
+Lagrangian density, Eq.~(\ref{eq:octintL}), and contains factors of
+$C_{Bm} = \pm 1,\pm \sqrt{2}$. We also require a term calculated from
+the SU(3) invariant combinations $M_{Bm}$; the coefficient of the
+interaction $\bar{B}Bm$ in terms of $F$ and $D$ factors as found in
+Table~\ref{tab:FDcouplings}.\par
+%
+To calculate the values of $f_{Bm}$ we apply the following formula:
+%
+\be f_{Bm} = \frac{C_{Bm}}{A_{Bm}} M_{Bm}. \ee
+%
+For example, consider the interaction vertex $\omega + \Sigma^0 \to
+\overline{\Sigma^0}$:
+%
+\be A_{\Sigma \w} = -1, \quad C_{\Sigma \w} = +1, \quad M_{\Sigma \w}
+= -\frac{2D}{3}, \quad \Rightarrow \quad f_{\Sigma\omega} =
+\frac{+1}{-1}(-\frac{2D}{3}) = \frac{2D}{3}.  \ee
+%
+Performing these calculations for every possible interactions provides
+(consistently) the following couplings of the octet of baryons to the
+octet of mesons:\par
+%
+\be 
+\begin{array}{c}
+f_{N\rho} = D+F,\quad f_{\Lambda\rho} = 0,\quad f_{\Sigma\rho} =
+2F, \quad f_{\Xi\rho} = F-D, %\ee
+%
+\\[2mm]
+%\be 
+f_{N\w} = 3F-D, \quad f_{\Lambda\w} = -\frac{4}{3}D+2F, \quad
+f_{\Sigma\w} = 2F, \quad f_{\Xi\w} = F-D. 
+\end{array}
+\ee
+%
+\par
+%
+We can further simplify our calculations by examining all the
+different currents that one can form using a baryon, an antibaryon and
+a meson. As discussed in Ref.~\cite{Sakita:1965qt}, all possible
+couplings of baryons to vector mesons (denoted by $\bar{B}BV$) should
+be considered when writing out the most general Lagrangian density. By
+calculating the currents (prior to making any approximations or
+assumptions that appear in earlier sections here) we are able to find
+the $F$-, $D$-, and $S$-style couplings of the form $\bar{B}BX$ where
+$X$ is a meson with either scalar (S), vector (V), tensor (T),
+axial-vector (A) or pseudo-scalar (P) spin form.\par
+%
+Under an expanded SU(6) spin-flavor symmetry, the currents are shown
+in Table~\ref{tab:currents}, where the various vector couplings are of
+the forms
+%
+\be V_1 = \bar{\psi}\gamma_\mu\psi,\ V_2 =
+\bar{\psi}\sigma_{\mu\nu}q^\nu\psi,\ V_3 = \bar{\psi}q_\mu\psi, \ee
+%
+and we use the convenience definitions of
+%
+\be \sigma_{\mu\nu}=\frac{i}{2}\left[\gamma_\mu,\gamma_\nu\right], \quad
+H=\frac{4M^2+q^2}{2M^2}.  \ee
+%
+\par
+%
+\begin{table}[!t]
+\centering
+\caption[$F$-, $D$- and $S$-style baryon currents]{\protect $F$-, $D$-
+  and $S$-style Baryon currents for all types of meson vertices of the
+  form $\bar{B}BX$ where $X$ is a meson with either scalar (S), vector
+  (V), tensor (T), axial(pseudo-) vector (A) or pseudo-scalar (P) spin
+  form. Adapted from Ref.~\cite{Sakita:1965qt}.\label{tab:currents}}
+\vspace{3mm}
+\begin{tabular}{lccc}
+\hline 
+\hline 
+&&&\\[-4mm]
+   &     $F$    &    $D$    &    $S$ \\
+&&&\\[-4mm]
+\hline
+&&&\\[-2mm]
+S  & $\reci{3}H\bar{\psi}\psi$ & 0 & $\reci{3}H\bar{\psi}\psi$ \\
+&&&\\[-2mm]
+V${}_1$ & $\reci{3}\left(H-\reci{6}\frac{q^2}{M^2}\right)\bar{\psi}\gamma_\mu\psi$ &
+ $\frac{q^2}{6M^2}\bar{\psi}\gamma_\mu\psi$ &
+ $\reci{3}\left(H-\reci{3}\frac{q^2}{M^2}\right)\bar{\psi}\gamma_\mu\psi$ \\
+&&&\\[-2mm]
+V${}_2$ & $-\reci{9M}i\bar{\psi}\sigma_{\mu\nu}\psi$ &  
+$ + \reci{3M}i\bar{\psi}\sigma_{\mu\nu}\psi$ &
+$ - \frac{2}{9M}i\bar{\psi}\sigma_{\mu\nu}\psi$ \\
+&&&\\[-2mm]
+V${}_3$ &  0  &  0  &  0  \\
+&&&\\[-2mm]
+A & $ \frac{2}{9}H\bar{\psi}\gamma_5\gamma_\mu\psi $ &
+    $ \reci{3}H\bar{\psi}\gamma_5\gamma_\mu\psi $    & 
+    $ \reci{9}H\bar{\psi}\gamma_5\gamma_\mu\psi $ \\
+&&&\\[-2mm]
+P & $ \frac{2}{9}H\bar{\psi}\gamma_5\psi $ &
+    $ \reci{3}H\bar{\psi}\gamma_5\psi $    & 
+    $ \reci{9}H\bar{\psi}\gamma_5\psi $ \\
+&&&\\[-2mm]
+\hline
+\hline
+\end{tabular}
+\end{table}
+%
+If we now consider this as a low energy effective field theory, we can
+consider the case of $q^2=0$. We can also enforce rotational symmetry
+due to lack of a preferred frame (or direction) and thus remove the
+spatial components of both the mesons and the momenta, so that
+$V^\mu=(V^0,\vec{0})$ and $q^\mu=(q^0,\vec{0})$, as per
+Section~\ref{subsec:rotational}. Along with $\sigma_{00}=0$, all terms
+proportional to $q^2$ vanish, and $H=2$. Using these assumptions, the
+currents are reduced to those found in
+Table~\ref{tab:currentassumptions}.\par
+%
+We can now observe the relations between the $F$- and $D$-style
+couplings (with the $S$-style coupling now contributing to $F$ and
+$D$); First, as a check, we observe that the ratio $D/F$ for the
+pseudo-scalars (and the axial-vectors for that matter) is indeed
+$\frac{3}{2}$ as commonly noted in the
+literature~\cite{Gursey:1964,Aliev:2001} under SU(6)
+symmetry~\cite{Ishida:1968}. Less commonly found in the literature is
+that the $\gamma_\mu$-type vector coupling is purely $F$-style, thus
+the vector analogy of the above relation is $D/F=0$, implying
+$D=0$.\par
+%
+Using the couplings of Table~\ref{tab:FDcouplings}, we can evaluate
+the couplings of the vector mesons to the entire baryon octet. This
+provides us with a unified description of the couplings in terms of an
+arbitrary parameter $F$. These couplings are thus
+%
+\be%a
+\begin{array}{c}
+%\nonumber
+f_{N\rho} = F,\quad f_{\Lambda\rho} = 0,\quad f_{\Sigma\rho} =
+2F,\quad f_{\Xi\rho} = F, \\[2mm] f_{N\w} = 3F,\quad f_{\Lambda\w} =
+2F,\quad f_{\Sigma\w} = 2F,\quad f_{\Xi\w} = F.
+\end{array}
+\ee%a
+%
+We can normalize these results to the nucleon-$\w$ coupling, since we
+will fit this parameter to saturation properties (refer to
+Section~\ref{sec:EoS}). Thus the normalized couplings are
+%
+\be g_{Bm} = g_{N\w}\frac{f_{Bm}}{f_{N\w}}. \ee
+%
+We can then separate the meson couplings, since the the normalization
+above results in the following relations, using isospin $I_B$, and
+strangeness $S_B$ of baryon $B$;
+%
+\be g_{B\w} =\ \frac{(3-S_B)}{3}\ g_{N\w}, \quad g_{B\rho}
+=\ \frac{2I_B}{3}\ g_{N\w}.  \ee
+%
+These results are consistent with a commonly used na\"ive assumption
+that the $\w$ meson couples to the number of light quarks, and that
+the $\rho$ meson couples to isospin. To emphasize the isospin symmetry
+in our models, we will include the isospin as a factor in our
+Lagrangian densities in the form of the $\vec{\tau}$ matrices. In
+doing so, rather than having an independent coupling for each isospin
+group, we will have a global coupling for the $\rho$ meson,
+$g_{\rho}$. \par
+%
+\begin{table}[!t]
+\centering
+\caption[$F$-, $D$- and $S$-style baryon currents with mean-field
+  assumptions]{\protect $F$-, $D$- and $S$-style Baryon currents with
+  mean-field assumptions $V^\mu=(V^0,\vec{0})$, $q^\mu=(q^0,\vec{0})$,
+  and $q^2=0$. \label{tab:currentassumptions}}
+\vspace{3mm}
+\begin{tabular}{lccc}
+\hline 
+\hline 
+&&&\\[-4mm]
+   &     $F$    &    $D$    &    $S$ \\
+&&&\\[-4mm]
+\hline
+&&&\\[-2mm]
+S  & $\frac{2}{3}\bar{\psi}\psi$ & 0 & $\frac{2}{3}\bar{\psi}\psi$ \\
+&&&\\[-2mm]
+V${}_1$ & $\frac{2}{3}\bar{\psi}\gamma_\mu\psi$ & 0 & $\frac{2}{3}\bar{\psi}\gamma_\mu\psi$ \\
+&&&\\[-2mm]
+V${}_2$ & 0 & 0 & 0 \\
+&&&\\[-2mm]
+V${}_3$ &  0  &  0  &  0  \\
+&&&\\[-2mm]
+A & $ \frac{4}{9}\bar{\psi}\gamma_5\gamma_\mu\psi $ &
+    $ \frac{2}{3}\bar{\psi}\gamma_5\gamma_\mu\psi $    & 
+    $ \frac{2}{9}\bar{\psi}\gamma_5\gamma_\mu\psi $ \\
+&&&\\[-2mm]
+P & $ \frac{4}{9}\bar{\psi}\gamma_5\psi $ &
+    $ \frac{2}{3}\bar{\psi}\gamma_5\psi $    & 
+    $ \frac{2}{9}\bar{\psi}\gamma_5\psi $ \\
+&&&\\[-2mm]
+\hline
+\hline
+\end{tabular}
+\end{table}
+%
+Similarly to the above relations for the vector mesons, we have the
+same relation for the scalar mesons; that the coupling is purely
+$F$-style ($D=0$). Therefore the couplings for the scalar mesons are
+the same as for the vector mesons, under the replacements $\w \to \s$,
+$\vec{\rho} \to \vec{a}_0$. In the calculations that follow, we shall
+further neglect the contributions from the scalar iso-vector
+$\vec{a}_0$ due to their relatively large mass (refer to
+Table~\ref{tab:particlesummary}).\par
+%
+%While we have derived the above relation for the $\rho$ meson, it
+%relies on the SU(3)$\ocross$SU(2) symmetry, which isn't a perfect symmetry
+%considering the mass of the strange quark compared to the light
+%quarks. As an improvement to the models, 
+As an alternative to the SU(6) relations for the $\rho$ meson coupling
+$g_\rho$, we can use an experimental constraint. As we have shown
+above, the $\rho$ meson couples to isospin, and as we will show in
+Section~\ref{sec:qhd} the isospin density is proportional to the
+asymmetry between members of an isospin group; for example the
+asymmetry between protons and neutrons. This asymmetry is measured by
+the symmetry energy $a_4 \equiv a_{\rm sym}$ (derived in
+Appendix~\ref{sec:symenergy}) which appears in the semi-empirical mass
+formula (the connection is derived in Appendix~\ref{sec:SEMF}) which
+in the absence of charge symmetry is defined by Eq.~(\ref{eq:a4}).
+%as
+%
+%\be \label{eq:a4def}
+%a_{\rm sym} = \frac{g_{N\rho}^2\; k_{F_{\rm sat}}^3}{3\pi^2m_\rho^2}
+%+ \frac{k_{F_{\rm sat}}^2}{12\sqrt{k_{F_{\rm sat}}^2 + (M_{n}^{* 2})_{\rm sat}}}
+%+ \frac{k_{F_{\rm sat}}^2}{12\sqrt{k_{F_{\rm sat}}^2 + (M_{p}^{* 2})_{\rm sat}}}.
+%\ee
+%
+The coupling of $\rho$ to the nucleons is found such that the
+experimental value of the asymmetry energy of $a_{\rm sym} = 32.5~{\rm
+  MeV}$ is reproduced at saturation. The coupling of $\rho$ to the
+remaining baryons follows the relations above.\par
+%
+% \cleardoublepage 
+
+\end{document}
