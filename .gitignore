@@ -20,4 +20,4 @@ grattanReporter.Rproj
 
 tests/testthat/fnote-typogr/*
 !tests/testthat/fnote-typogr/*.tex
-
+inst/doc
