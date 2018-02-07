@@ -11,7 +11,7 @@ grattanReporter.Rproj
 *.lof
 *.log
 *.out
-*.pdf
+!*.pdf
 *.run.xml
 *.toc
 *.idx
