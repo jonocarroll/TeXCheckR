@@ -27,7 +27,9 @@ library(TeXCheckR)
 
 # Worked Examples
 
-Using a template $\LaTeX$ document would be cheating. Instead we should use a real-world document. One with significance perhaps. To show that I'm not messing around, I'll perform the worked examples using the first two chapters of my own published PhD Thesis, available [here](https://arxiv.org/abs/1001.4318). My University education led me to be a theoretical physicist for a while, so there's bound to be some decent content here to test out these functions. It's also long enough in the past that I am unphased by any issues I will undoubtedly find with it.
+## Source Material
+
+Using a template $\LaTeX$ document would be cheating. Instead we should use a real-world document. One with significance perhaps. To show that I'm not messing around, I'll perform the worked examples using the first two chapters of my own published PhD Thesis, available [here](https://arxiv.org/abs/1001.4318). My University education led me to be a theoretical physicist for a while, so there's bound to be some decent content here to test out these functions. It's also long enough in the past that I am unfazed by any issues I will undoubtedly find with it.
 
 Starting from a download of the [raw source](https://arxiv.org/e-print/1001.4318) (a `.tar.gz` file) stored in a directory, I have combined the preamble with the first two chapters in a file included in this package, removing any graphics for simplicity.
 
@@ -155,6 +157,24 @@ check_spelling(carrollthesis, check_etcs = FALSE, known.correct = known_correct,
 Eventually, we get **no** errors produced, signalling that the check is finally complete.
 
 Using `rstudio = TRUE` we can even have RStudio open the file at the relevant place.
+
+## Meta Information
+
+`commands_used()` can extract all commands used in a document. Lots of physics here (custom commands a plenty)
+
+```{r list commands used}
+commands_used(readr::read_lines(carrollthesis))
+```
+
+<!-- ## Splitting into Smaller Pieces -->
+
+<!-- The source file attached was assembled by pasting together a preamble with two chapter files. Originally these were `\include`d. To go back to this state, we can split the source at chapter definitions -->
+
+<!-- ```{r split at chapter} -->
+<!-- tmpTex <- tempfile(fileext = ".tex") -->
+<!-- tmpdir <- tempdir() -->
+<!-- split_report(carrollthesis, subdir = tmpdir) -->
+<!-- ``` -->
 
 # Template
 
