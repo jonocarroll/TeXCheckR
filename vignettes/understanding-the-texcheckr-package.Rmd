@@ -176,6 +176,13 @@ commands_used(readr::read_lines(carrollthesis))
 <!-- split_report(carrollthesis, subdir = tmpdir) -->
 <!-- ``` -->
 
+<!-- ## Checking for Consecutive words -->
+
+<!-- ```{r consecutive words} -->
+<!-- check_consecutive_words(path = sub("carrollthesis.tex", "", carrollthesis), latex_file = "carrollthesis.tex") -->
+<!-- ``` -->
+
+
 # Template
 
 Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
