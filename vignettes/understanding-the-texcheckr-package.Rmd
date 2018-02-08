@@ -39,6 +39,8 @@ readLines(carrollthesis <- system.file("extdata", "carrollthesis.tex", package =
 
 When compiled (in this case via `tinytex::pdflatex('carrollthesis')`) the result looks like [this](`r system.file("extdata", "carrollthesis.pdf", package = "TeXCheckR")`); 32 pages of equations and text.
 
+![](carrollthesis.png)
+
 ## Spell Check
 
 A first thing to do would be to spell-check the source `.tex` file. This works better than simply running spell-check over the input file since that is full of $\LaTeX$ commands which will fail. Testing the thesis source is as simple as
