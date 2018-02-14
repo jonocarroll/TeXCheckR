@@ -158,6 +158,54 @@ check_spelling(carrollthesis, check_etcs = FALSE, known.correct = known_correct,
 
 Eventually, we get **no** errors produced, signalling that the check is finally complete.
 
+Some of these words were simply US spellings; e.g. `flavor`, `color`, `endeavor`. The first two of these refer to specific physics terms (quantum numbers) so I've deferred to the US spelling for them for consistency. If we wish to specify the dictionary language in `check_spelling()` then we can do that with the `dict_lang` argument
+
+```{r, error = TRUE}
+known_correct <- c("cmr",  "rcrcrcl", "cccc", "rcrcr", ## commands
+                   "Eq", "Eqs", "Refs", ## references
+                   "QHD", "QMC", "QED", "MFA", "DCSB", "DSE", ## acronyms
+                   "Hadrodynamics", "Hitchhiker", ## unusual words
+                   "perturbative", "perturbatively",
+                   "disambiguity", "extremum", 
+                   "wavefunction", "spinors", "antibaryons",  "hadronic", ## physics terms
+                   "isoscalar", "isovector",  "iso",  
+                   "anticommutation", "renormalization", "contravariant", 
+                   "bilinears", "unitless", "gluonic", "isochemical",
+                   "abc", "jk", "fm","aG", "gA", "ig", "ij", "u", "ip", ## math
+                   "gf", "iS", "iD", "DV", "DS", "PdV", "BM", "dk", 
+                   "dS", "dV", "dN", "TdS", "dE", "BB", "Bm",
+                   "sym", "diag",  "MeV", 
+                   "Baade", "Zwicky", "Pauli", "Chandrasekhar", "Minkoswki", "Yukawa", ## names
+                   "Fock", "Hartree", "Gell", "Mann", "Noether", "Goldstone", "Schwinger",
+                   "na", "ively") ## contain accents
+## removed "defense",  "endeavor", "flavor", "color"
+ignore_lines <- c(1161, 1261)
+
+check_spelling(carrollthesis, check_etcs = FALSE, known.correct = known_correct, ignore.lines = ignore_lines, dict_lang = "en_US")
+```
+
+Interestingly enough, "hyperon" is a word in the `en_GB` dictionary but not the `en_US` one, go figure
+
+```{r}
+hunspell::hunspell_check("hyperon", dict = "en_GB")
+hunspell::hunspell_check("hyperon", dict = "en_US")
+```
+
+Adding this plus some other examples, we again reach an error-free state
+
+```{r}
+US_specific_known_correct <- c("hyperon", "favourable", "favourite", "precisions", "electro", "Chromodynamics", "QCD", "Regularisation", "chiral", "utilise", "fermions", "gravitationally", "muons", "SNR", "centre", "hadrons", "antiquark", "isospin", "spinor", "Adjoint", "initio", "notational", "quantization", "adjoint", "SU", "eigenstate", "unobservable", "generalisation", "fermion", "massless", "Hermitian", "fermionic", "renormalized", "covariant", "pion", "boson", "thermodynamically", "unphysical", "isentropic", "isothermal")
+all_known_correct <- c(known_correct, US_specific_known_correct)
+check_spelling(carrollthesis, check_etcs = FALSE, known.correct = all_known_correct, ignore.lines = ignore_lines, dict_lang = "en_US")
+```
+
+A lot of these are physics-specific words, though it's perhaps odd that they are in one dictionary and not the other
+
+```{r}
+table(hunspell::hunspell_check(US_specific_known_correct, dict = "en_GB"))
+table(hunspell::hunspell_check(US_specific_known_correct, dict = "en_US"))
+```
+
 Using `rstudio = TRUE` we can even have RStudio open the file at the relevant place.
 
 ## Meta Information
