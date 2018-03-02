@@ -88,10 +88,6 @@ nth_min.int <- function(x, n){
   sort.int(x)[n]
 }
 
-strip_comments <- function(lines) {
-  sub("(?<!(\\\\))[%].*$", "%", lines, perl = TRUE)
-}
-
 move_to <- function(to.dir, from.dir = ".", pattern = "\\.((pdf)|(tex)|(cls)|(sty)|(Rnw)|(bib)|(png)|(jpg))$"){
   x <- list.files(path = from.dir,
                   pattern = pattern,
@@ -157,6 +153,14 @@ return_first_nonNA <- function(x) {
   }
   out
 }
+
+# testthat
+is_testing <- function() {
+  requireNamespace("testthat", quietly = TRUE) &&
+    utils::packageVersion("testthat") >= package_version("2.0.0") &&
+    testthat::is_testing()
+}
+
 
 
 

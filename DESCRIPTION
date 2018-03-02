@@ -25,11 +25,9 @@ Imports:
 LazyData: TRUE
 ByteCompile: true
 RoxygenNote: 6.0.1
-Suggests: 
-    devtools,
-    readr,
-    stringi,
-    testthat,
-    knitr,
-    rmarkdown
-VignetteBuilder: knitr
+Suggests:
+  devtools,
+  readr,
+  stringi,
+  testthat,
+  tinytex
